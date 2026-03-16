@@ -1,13 +1,15 @@
 [project]
-name = "pathway-kg-maker"
+name = "pathwaykg"
 version = "0.1.0"
-description = "Add your description here"
+description = "Creates an RDF knowledge graph for KEGG pathways"
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "biopython>=1.86",
     "rdflib>=7.6.0",
     "regex>=2026.2.28",
-    "requests>=2.32.5",
     "tenacity>=9.1.4",
 ]
+
+[project.scripts]
+kgbuild = "kg.build:main"
