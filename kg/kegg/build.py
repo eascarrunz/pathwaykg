@@ -9,7 +9,7 @@ from typing import Generator, Any, Iterable
 from Bio.KEGG import Gene
 from rdflib import Namespace, Graph, Literal, URIRef
 import kg.namespaces as ns
-import kg.fetch
+import kg.kegg.fetch
 import regex
 
 
@@ -77,9 +77,9 @@ def main() -> int:
             records = load_records_from_file(args.file)
         else:
             if args.pathway:
-                text = kg.fetch.fetch_pathway_genes(args.organism, args.pathway)
-                gene_ids = kg.fetch.extract_gene_ids(text)
-                records = kg.fetch.fetch_gene_records(gene_ids)
+                text = kg.kegg.fetch.fetch_pathway_genes(args.organism, args.pathway)
+                gene_ids = kg.kegg.fetch.extract_gene_ids(text)
+                records = kg.kegg.fetch.fetch_gene_records(gene_ids)
             else:
                 print("You must provide either a KEGG pathway ID or a KEGG pathway file")
 
