@@ -10,4 +10,5 @@ def create_organism_namespace(org_id: str) -> Namespace:
 KEGG = Namespace("https://www.kegg.jp/entry/")
 UNIPROT = Namespace("https://identifiers.org/uniprot:")
 KG = Namespace("https://example.org/kg/ontology/")
-EC = Namespace("https://identifiers.org/ec-code:")
+EC = Namespace("http://purl.uniprot.org/enzyme/")
+RHEA = Namespace("https://rdf.rhea-db.org/")
