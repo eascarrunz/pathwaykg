@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "biopython>=1.86",
+    "pyvis>=0.3.2",
     "rdflib>=7.6.0",
     "regex>=2026.2.28",
     "tenacity>=9.1.4",
