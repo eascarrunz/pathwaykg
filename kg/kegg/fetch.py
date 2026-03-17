@@ -29,6 +29,8 @@ WAIT_EXPONENTIAL_ARGS = {
 class KGMLData:
     gene_ids: set[str] = field(default_factory=set)
     ko_ids: set[str] = field(default_factory=set)
+    ko_reactions: dict[str, set[str]] = field(default_factory=dict)
+    gene_reactions: dict[str, set[str]] = field(default_factory=dict)
     reaction_ids: set[str] = field(default_factory=set)
     compound_ids: set[str] = field(default_factory=set)
 
@@ -46,19 +48,29 @@ def parse_kgml(handle: TextIO) -> KGMLData:
     root = ElementTree.parse(handle).getroot()
 
     for entry in root.findall("entry"):
-        entry_ids = [s.split(':')[-1] for s in entry.get("name").split()]
+        entry_ids = entry.get("name").split()
+        reaction_string = entry.get("reaction")
+
         match entry.get("type"):
             case "gene":
                 data.gene_ids.update(entry_ids)
+                if reaction_string:
+                    reaction_ids = [s.split(':')[-1] for s in reaction_string.split()]
+                    for gene_id in entry_ids:
+                        data.gene_reactions.setdefault(gene_id, set()).update(reaction_ids)
             case "ortholog":
-                data.ko_ids.update(entry_ids)
+                ortholog_ids = [s.split(':')[-1] for s in entry_ids]
+                data.ko_ids.update(ortholog_ids)
+                if reaction_string:
+                    reaction_ids = [s.split(':')[-1] for s in reaction_string.split()]
+                    for ko_id in ortholog_ids:
+                        data.ko_reactions.setdefault(ko_id, set()).update(reaction_ids)
             case "compound":
-                data.compound_ids.update(entry_ids)
-        
-        reaction_string = entry.get("reaction")
+                data.compound_ids.update([s.split(':')[-1] for s in entry_ids])
+
         if reaction_string:
-            data.reaction_ids.update([s.split(':')[-1] for s in reaction_string.split()])
-    
+            data.reaction_ids.update(s.split(':')[-1] for s in reaction_string.split())
+        
     return data
 
 @retry(
@@ -67,6 +79,7 @@ def parse_kgml(handle: TextIO) -> KGMLData:
     retry=retry_if_exception_type(urllib.error.HTTPError),
 )
 def _fetch_batch(batch_ids: list[str]) -> io.TextIOWrapper:
+    # print(batch_ids, file=sys.stderr)
     return REST.kegg_get(batch_ids)
 
 
@@ -95,8 +108,8 @@ def parse_reaction_record(text: str) -> dict:
                 data["definition"] = line[12:].strip()
             case "EQUATION":
                 left, right = [part.strip() for part in line[12:].split("<=>")]
-                data["substrates"] = [substrate.strip() for substrate in left.split('+')]
-                data["products"] = [product.strip() for product in right.split('+')]
+                data["substrates"] = [substrate.split()[-1].strip() for substrate in left.split('+')]
+                data["products"] = [product.split()[-1].strip() for product in right.split('+')]
             case _:
                 pass
 

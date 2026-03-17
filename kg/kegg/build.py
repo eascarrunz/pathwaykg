@@ -6,16 +6,35 @@ import sys
 import argparse
 from pathlib import Path
 from typing import Generator, Any, Iterable
-from Bio.KEGG import Gene
+from Bio.KEGG import Gene, Compound
 from rdflib import Namespace, Graph, Literal, URIRef
 import kg.namespaces as ns
-import kg.kegg.fetch
+from kg.kegg.fetch import fetch_pathway_kgml, parse_kgml, KGMLData, fetch_gene_records, fetch_reaction_records, fetch_compound_records
 import regex
 
+def add_reaction(graph: Graph, reaction_record: dict) -> None:
+    reaction_uri = ns.KEGG[reaction_record["id"]]
+    graph.add((reaction_uri, ns.RDF.type, ns.KG["Reaction"]))
+    graph.add((reaction_uri, ns.RDFS.label, Literal(reaction_record["definition"])))
+    
+    for id in reaction_record["substrates"]:
+        compound_uri = ns.KEGG[id]
+        graph.add((reaction_uri, ns.KG["hasSubstrate"], compound_uri))
 
-def load_records_from_file(filepath: str | Path) -> Generator[Gene.Record, Any, None]:
-    with open(filepath) as file:
-        yield from Gene.parse(file)
+    for id in reaction_record["products"]:
+        compound_uri = ns.KEGG[id]
+        graph.add((reaction_uri, ns.KG["hasProduct"], compound_uri))
+
+    return None
+
+
+def add_compound(graph: Graph, compound_record: Compound.Record) -> None:
+    compound_uri = ns.KEGG[compound_record.entry]
+
+    graph.add((compound_uri, ns.RDF.type, ns.KG["Compound"]))
+    graph.add((compound_uri, ns.RDFS.label, Literal(compound_record.name[0])))
+
+    return None
 
 
 def extract_ec(description: str) -> list[str]:
@@ -51,45 +70,56 @@ def add_enzyme(
     return None
 
 
-def build_kg(records: Iterable[Gene.Record], organism_id: str) -> Graph:
+def build_kg(organism_id: str, kgml_data: KGMLData) -> Graph:
     organism_namespace = ns.create_organism_namespace(organism_id)
     graph = Graph()
     graph.bind(organism_id, organism_namespace)
+    graph.bind("kg", ns.KG)
+    graph.bind("kegg", ns.KEGG)
+    graph.bind("ec", ns.EC)
 
-    for record in records:
+    gene_records = fetch_gene_records(kgml_data.gene_ids)
+    for record in gene_records:
         add_enzyme(graph, record, organism_namespace)
+
+    reaction_records = fetch_reaction_records(kgml_data.reaction_ids)
+    for record in reaction_records:
+        add_reaction(graph, record)
+
+    compound_records = fetch_compound_records(kgml_data.compound_ids)
+    for record in compound_records:
+        add_compound(graph, record)
+
+    for gene_id, reactions in kgml_data.gene_reactions.items():
+        # ko_uri = ns.KEGG[ko]
+        gene_uri = organism_namespace[gene_id.split(':')[-1]]
+        for reaction in reactions:
+            reaction_uri = ns.KEGG[reaction]
+            graph.add((gene_uri, ns.KG["catalyzes"], reaction_uri))
 
     return graph
 
 
 def main() -> int:
     arg_parser = argparse.ArgumentParser("BuildKG", description="Build an RDF knowledge graph for a pathway")
-    arg_parser.add_argument("--file", "-f", type=Path, help="Path to KEGG pathway file")
     arg_parser.add_argument("--organism", "-o", type=str, help="KEGG organism ID")
     arg_parser.add_argument("--pathway", "-p", type=str, help="KEGG pathway ID")
 
     args = arg_parser.parse_args()
 
-    records: Iterable[Gene.Record] | None = None
-
-    if args.organism:
-        if args.file:
-            records = load_records_from_file(args.file)
-        else:
-            if args.pathway:
-                text = kg.kegg.fetch.fetch_pathway_genes(args.organism, args.pathway)
-                gene_ids = kg.kegg.fetch.extract_gene_ids(text)
-                records = kg.kegg.fetch.fetch_gene_records(gene_ids)
-            else:
-                print("You must provide either a KEGG pathway ID or a KEGG pathway file")
-
-                return 1
-    else:
+    if not args.organism:
         print("You must provide a KEGG organism ID")
 
         return 1
     
-    g = build_kg(records, args.organism)
+    if not args.pathway:
+        print("You must provide a KEGG pathway ID")
+
+        return 1
+    
+    kgml_data = parse_kgml(fetch_pathway_kgml(args.organism, args.pathway))
+
+    g = build_kg(args.organism, kgml_data)
 
     g.serialize(sys.stdout.buffer, "turtle")
 

@@ -10,10 +10,10 @@ from typing import Callable
 import kg.namespaces as ns
 
 NODE_TYPE_PALETTE = {
-    ns.KG["Gene"]: "#4A90D9",
-    ns.KG["Reaction"]: "#E8813A",
-    ns.KG["Compound"]: "#5DB85D",
-    ns.KG["KOTerm"]: "#9B59B6",
+    ns.KG["Gene"]: "#386cb0",
+    ns.KG["Reaction"]: "#beaed4",
+    ns.KG["Compound"]: "#ffff99",
+    ns.KG["KOTerm"]: "#7fc97f",
 }
 DEFAULT_COLOR = "#999999"
 
@@ -110,10 +110,8 @@ def build_ko_pathway_network(
     q = prepareQuery("""
 SELECT ?ko ?reaction (COUNT(?gene) AS ?geneCount) (GROUP_CONCAT(?geneId; separator=", ") AS ?genes)
 WHERE {
-    ?reaction rdf:type kg:Reaction .
+    ?gene kg:catalyzes ?reaction .
     ?gene kg:hasOrtholog ?ko .
-    ?gene kg:hasEC ?ec .
-    ?reaction kg:hasEC ?ec .
     BIND(strafter(str(?gene), "/") AS ?geneId)
 }
 GROUP BY ?ko ?reaction
@@ -126,7 +124,7 @@ GROUP BY ?ko ?reaction
         ko_metatip += f"\nGene count: {str(row.geneCount)}\nGenes: {row.genes}"
         nw.add_node(str(row.ko), label=ko_label, title=ko_metatip, color=ko_color)
         reaction_label, reaction_metatip, reaction_color = get_node_config(row.reaction, graph, color_fn)
-        nw.add_node(str(row.reaction), label=reaction_label, title=reaction_metatip, color=reaction_color)
+        nw.add_node(str(row.reaction), label=reaction_label, title=reaction_metatip, color=reaction_color, shape="diamond")
         nw.add_edge(str(row.ko), str(row.reaction), title="Catalyzes")
 
     q = prepareQuery(
@@ -144,7 +142,7 @@ WHERE{{
     for row in result:
         if str(row.s) in nw.node_ids:
             o_label, o_metatip, o_color = get_node_config(row.o, graph, color_fn)
-            nw.add_node(str(row.o), label=o_label, title=o_metatip, color=o_color)
+            nw.add_node(str(row.o), label=o_label, title=o_metatip, color=o_color, shape="square")
             if row.p == ns.KG["hasSubstrate"]:
                 nw.add_edge(str(row.o), str(row.s), label="substrateOf")
             elif row.p == ns.KG["hasProduct"]:
