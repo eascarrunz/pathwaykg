@@ -38,7 +38,7 @@ class KGMLData:
 @retry(
     wait=wait_exponential(**WAIT_EXPONENTIAL_ARGS),
     stop=stop_after_attempt(5),
-    retry=retry_if_exception_type(urllib.error.HTTPError),
+    retry=retry_if_exception_type(urllib.error.URLError),
 )
 def fetch_pathway_kgml(organism_id: str, pathway_id: str) -> TextIO:
     return REST.kegg_get(f"{organism_id}{pathway_id}", "kgml")
@@ -76,7 +76,7 @@ def parse_kgml(handle: TextIO) -> KGMLData:
 @retry(
     wait=wait_exponential(**WAIT_EXPONENTIAL_ARGS),
     stop=stop_after_attempt(5),
-    retry=retry_if_exception_type(urllib.error.HTTPError),
+    retry=retry_if_exception_type(urllib.error.URLError),
 )
 def _fetch_batch(batch_ids: list[str]) -> io.TextIOWrapper:
     # print(batch_ids, file=sys.stderr)
@@ -130,7 +130,7 @@ def fetch_compound_records(compound_ids: set[str]) -> Generator[Compound.Record,
 @retry(
     wait=wait_exponential(**WAIT_EXPONENTIAL_ARGS),
     stop=stop_after_attempt(5),
-    retry=retry_if_exception_type(urllib.error.HTTPError),
+    retry=retry_if_exception_type(urllib.error.URLError),
 )
 def fetch_pathway_genes(organism_id: str, pathway_id: str) -> str:
     response = REST.kegg_link(organism_id, f"path:{organism_id}{pathway_id}")

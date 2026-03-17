@@ -4,6 +4,7 @@
 
 import sys
 import argparse
+from tqdm import tqdm
 from pathlib import Path
 from typing import Generator, Any, Iterable
 from Bio.KEGG import Gene, Compound
@@ -79,19 +80,21 @@ def build_kg(organism_id: str, kgml_data: KGMLData) -> Graph:
     graph.bind("ec", ns.EC)
 
     gene_records = fetch_gene_records(kgml_data.gene_ids)
-    for record in gene_records:
+    prog_desc = "Fetching gene data"
+    for record in tqdm(gene_records, total=len(kgml_data.gene_ids), desc= prog_desc, file=sys.stderr):
         add_enzyme(graph, record, organism_namespace)
 
     reaction_records = fetch_reaction_records(kgml_data.reaction_ids)
-    for record in reaction_records:
+    prog_desc = "Fetching reaction data"
+    for record in tqdm(reaction_records, total=len(kgml_data.reaction_ids), desc=prog_desc, file=sys.stderr):
         add_reaction(graph, record)
 
     compound_records = fetch_compound_records(kgml_data.compound_ids)
-    for record in compound_records:
+    prog_desc = "Fetching compound data"
+    for record in tqdm(compound_records, total=len(kgml_data.compound_ids), desc=prog_desc, file=sys.stderr):
         add_compound(graph, record)
 
     for gene_id, reactions in kgml_data.gene_reactions.items():
-        # ko_uri = ns.KEGG[ko]
         gene_uri = organism_namespace[gene_id.split(':')[-1]]
         for reaction in reactions:
             reaction_uri = ns.KEGG[reaction]
