@@ -19,7 +19,7 @@ def load_records_from_file(filepath: str | Path) -> Generator[Gene.Record, Any, 
 
 
 def extract_ec(description: str) -> list[str]:
-    return regex.findall(r"\[EC:([\d\.\-]+)\]", description)
+    return [ec for block in regex.findall(r"\[EC:([\d\.\- ]+)\]", description) for ec in block.split()]
 
 
 def extract_dblinks(record: Gene.Record) -> dict[str, list]:
