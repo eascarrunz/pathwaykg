@@ -7,7 +7,7 @@ from pyvis.network import Network
 from rdflib import Graph, URIRef
 from rdflib.plugins.sparql import prepareQuery
 from typing import Callable, TextIO
-import kg.namespaces as ns
+import pathwaykg.namespaces as ns
 
 NODE_OVERLAP_PALETTE = {
     "a": "#66c2a5",

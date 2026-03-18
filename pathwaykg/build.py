@@ -10,8 +10,8 @@ from typing import Generator, Any, Iterable
 from Bio.KEGG import Gene, Compound
 from rdflib.plugins.sparql import prepareQuery
 from rdflib import Namespace, Graph, Literal, URIRef
-import kg.namespaces as ns
-from kg.kegg.fetch import fetch_pathway_kgml, parse_kgml, KGMLData, fetch_gene_records, fetch_reaction_records, fetch_compound_records
+import pathwaykg.namespaces as ns
+from pathwaykg.fetch import fetch_pathway_kgml, parse_kgml, KGMLData, fetch_gene_records, fetch_reaction_records, fetch_compound_records
 import regex
 
 def add_reaction(graph: Graph, reaction_record: dict) -> None:
