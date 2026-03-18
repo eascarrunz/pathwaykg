@@ -1,6 +1,6 @@
 # Knowledge graphs of KEGG pathways
 
-<p align="center"><img src="assets/hsa00232.png" alt="hsa00232: Pathway of caffeine metabolism in humans" width="300"></p>
+<p align="center"><img src="assets/hsa00232.png" alt="hsa00232: Pathway of caffeine metabolism in humans" width="275"></p>
 
 This project includes scripts for building [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) knowledge graphs and visualizing pathways from the KEGG database. You can visualize one pathway graph at the time, or combine pathways from two different species to see their overlap.
 
@@ -58,7 +58,7 @@ For instance, "hsa00010" is the entry for the _**H**omo **sa**piens_ glycolysis/
 kgbuild -p hsa00010 > hsa00010.ttl
 ```
 
-This fetches pathway topology (KGML), gene records, reaction equations, and compound metadata from the KEGG REST API, then assembles them into an RDF graph in Turtle ("ttl") format.
+This fetches pathway topology (KGML), gene records, reaction equations, and compound metadata from the KEGG REST API, then assembles them into an RDF graph in Turtle ("ttl") format. You can find some example Turtle files in the examples directory of this repository.
 
 KEGG has webpages listing the [organism codes](https://www.genome.jp/kegg/tables/br08606.html) and [pathway codes](https://www.genome.jp/kegg/pathway.html) available. Not all organisms have all the possible pathways. Reference pathways with entries starting with "map" and "ko" are **not** supported.
 
@@ -84,14 +84,20 @@ Generate an interactive HTML visualization from a Turtle file. Here, glycolysis/
 visualize -i hsa00010.ttl > hsa00010.html
 ```
 
+[Follow this link to go see visualization in action](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/hsa00010.html
+).
+
 The visualization is an abstracted representation of the metabolic network based on KO terms. Individual genes are not shown — they are aggregated under their [**KO (KEGG Orthology) terms**](https://www.genome.jp/kegg/ko.html), representing conserved functional roles rather than specific gene loci. KO nodes connect to reaction nodes, which connect to compound nodes, tracing how enzymatic steps transform metabolites through the pathway.
 
 Nodes types have different colours and shapes, and display metadata on hover.
+
 - **○ "Enzyme group" nodes**: represent a functional ortholog group of enzymes sharing the same KO term. The hover tooltip shows the KO description, how many organism-specific genes map to that KO, and their KEGG gene IDs.
 - **◇ Reaction nodes**: represent a biochemical reaction from the KEGG Reactions database. Labeled with the reaction definition (equation).
 - **□ Compound nodes**: metabolites that participate as substrates or products. Labeled with the compound name.
 
 You can zoom in and out on the graph to display or hide text labels on nodes and edges.
+
+![alt text](assets/aldose_reaction.png)
 
 ### Pathway comparison mode
 
@@ -108,3 +114,14 @@ Nodes are colored by provenance instead of type: shared nodes (present in both o
 - <img src="assets/color_purple.svg" height="14"> **Purple**: nodes present in both graphs
 
 Since KO terms, reactions, and compounds use organism-independent KEGG identifiers, this reveals evolutionary conservation and divergence at the functional level — which enzymatic steps are conserved and which are lineage-specific.
+
+This is what the overlap graph of glycolysis in _Escherichia coli_ (teal) and _Homo sapiens_ (orange) looks like ([click here for the live visualization](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/eco-hsa-00010.html
+)):
+
+![alt text](assets/eco-hsa-00010.png)
+
+A dramatic example are the pathways of aromatic amino-acid biosynthesis in _E. coli_ (eco00400) and _H. sapiens_ (hsa00400). They have a handful of common compounds and reactions, but they are realized by completely non-homologous sets of enzymes:
+
+![alt text](assets/eco-hsa-00400.png)
+
+[Go to the live visualization](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/hsa00400.html)
