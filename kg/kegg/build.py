@@ -8,6 +8,7 @@ from tqdm import tqdm
 from pathlib import Path
 from typing import Generator, Any, Iterable
 from Bio.KEGG import Gene, Compound
+from rdflib.plugins.sparql import prepareQuery
 from rdflib import Namespace, Graph, Literal, URIRef
 import kg.namespaces as ns
 from kg.kegg.fetch import fetch_pathway_kgml, parse_kgml, KGMLData, fetch_gene_records, fetch_reaction_records, fetch_compound_records
@@ -25,6 +26,9 @@ def add_reaction(graph: Graph, reaction_record: dict) -> None:
     for id in reaction_record["products"]:
         compound_uri = ns.KEGG[id]
         graph.add((reaction_uri, ns.KG["hasProduct"], compound_uri))
+
+    for ec in reaction_record.get("enzymes", []):
+        graph.add((reaction_uri, ns.KG["hasEC"], ns.EC[ec]))
 
     return None
 
@@ -63,6 +67,7 @@ def add_enzyme(
         graph.add((gene_uri, ns.KG["hasOrtholog"], ns.KEGG[ko]))
 
         for ec in extract_ec(description):
+            graph.add((ns.KEGG[ko], ns.KG["hasEC"], ns.EC[ec]))
             graph.add((gene_uri, ns.KG["hasEC"], ns.EC[ec]))
 
         graph.add((ns.KEGG[ko], ns.RDF.type, ns.KG["KOTerm"]))
@@ -89,9 +94,19 @@ def build_kg(organism_id: str, kgml_data: KGMLData) -> Graph:
     for record in tqdm(reaction_records, total=len(kgml_data.reaction_ids), desc=prog_desc, file=sys.stderr):
         add_reaction(graph, record)
 
-    compound_records = fetch_compound_records(kgml_data.compound_ids)
+    q = prepareQuery("""
+SELECT DISTINCT ?compound WHERE {
+    { ?reaction kg:hasSubstrate ?compound }
+    UNION
+    { ?reaction kg:hasProduct ?compound }
+}
+""", initNs={"kg": ns.KG})
+
+    compound_ids = {str(row.compound).split("/")[-1] for row in graph.query(q)}
+
+    compound_records = fetch_compound_records(compound_ids)
     prog_desc = "Fetching compound data"
-    for record in tqdm(compound_records, total=len(kgml_data.compound_ids), desc=prog_desc, file=sys.stderr):
+    for record in tqdm(compound_records, total=len(compound_ids), desc=prog_desc, file=sys.stderr):
         add_compound(graph, record)
 
     for gene_id, reactions in kgml_data.gene_reactions.items():

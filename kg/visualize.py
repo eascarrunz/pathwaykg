@@ -138,6 +138,8 @@ SELECT ?ko ?reaction (COUNT(?gene) AS ?geneCount) (GROUP_CONCAT(?geneId; separat
 WHERE {
     ?gene kg:catalyzes ?reaction .
     ?gene kg:hasOrtholog ?ko .
+    ?ko kg:hasEC ?ec .
+    ?reaction kg:hasEC ?ec .
     BIND(strafter(str(?gene), "/") AS ?geneId)
 }
 GROUP BY ?ko ?reaction

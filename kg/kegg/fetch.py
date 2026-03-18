@@ -58,6 +58,7 @@ def parse_kgml(handle: TextIO) -> KGMLData:
                     reaction_ids = [s.split(':')[-1] for s in reaction_string.split()]
                     for gene_id in entry_ids:
                         data.gene_reactions.setdefault(gene_id, set()).update(reaction_ids)
+                    data.reaction_ids.update(reaction_ids)
             case "ortholog":
                 ortholog_ids = [s.split(':')[-1] for s in entry_ids]
                 data.ko_ids.update(ortholog_ids)
@@ -68,9 +69,6 @@ def parse_kgml(handle: TextIO) -> KGMLData:
             case "compound":
                 data.compound_ids.update([s.split(':')[-1] for s in entry_ids])
 
-        if reaction_string:
-            data.reaction_ids.update(s.split(':')[-1] for s in reaction_string.split())
-        
     return data
 
 @retry(
@@ -110,6 +108,8 @@ def parse_reaction_record(text: str) -> dict:
                 left, right = [part.strip() for part in line[12:].split("<=>")]
                 data["substrates"] = [substrate.split()[-1].strip() for substrate in left.split('+')]
                 data["products"] = [product.split()[-1].strip() for product in right.split('+')]
+            case "ENZYME":
+                data["enzymes"] = line[12:].split()
             case _:
                 pass
 
