@@ -122,4 +122,4 @@ A dramatic example are the pathways of aromatic amino-acid biosynthesis in _E. c
 
 ![alt text](assets/eco-hsa-00400.png)
 
-[Go to the live visualization](https://eascarrunz.github.io/pathwaykg/examples/hsa00400.html)
+[Go to the live visualization](https://eascarrunz.github.io/pathwaykg/examples/eco-hsa-00400.html)
