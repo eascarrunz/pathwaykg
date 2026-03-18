@@ -84,8 +84,7 @@ Generate an interactive HTML visualization from a Turtle file. Here, glycolysis/
 visualize -i hsa00010.ttl > hsa00010.html
 ```
 
-[Follow this link to go see visualization in action](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/hsa00010.html
-).
+[Follow this link to go see visualization in action](https://eascarrunz.github.io/pathwaykg/examples/hsa00010.html).
 
 The visualization is an abstracted representation of the metabolic network based on KO terms. Individual genes are not shown — they are aggregated under their [**KO (KEGG Orthology) terms**](https://www.genome.jp/kegg/ko.html), representing conserved functional roles rather than specific gene loci. KO nodes connect to reaction nodes, which connect to compound nodes, tracing how enzymatic steps transform metabolites through the pathway.
 
@@ -115,8 +114,7 @@ Nodes are colored by provenance instead of type: shared nodes (present in both o
 
 Since KO terms, reactions, and compounds use organism-independent KEGG identifiers, this reveals evolutionary conservation and divergence at the functional level — which enzymatic steps are conserved and which are lineage-specific.
 
-This is what the overlap graph of glycolysis in _Escherichia coli_ (teal) and _Homo sapiens_ (orange) looks like ([click here for the live visualization](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/eco-hsa-00010.html
-)):
+This is what the overlap graph of glycolysis in _Escherichia coli_ (teal) and _Homo sapiens_ (orange) looks like ([click here for the live visualization](https://eascarrunz.github.io/pathwaykg/examples/eco-hsa-00010.html)):
 
 ![alt text](assets/eco-hsa-00010.png)
 
@@ -124,4 +122,4 @@ A dramatic example are the pathways of aromatic amino-acid biosynthesis in _E. c
 
 ![alt text](assets/eco-hsa-00400.png)
 
-[Go to the live visualization](https://htmlpreview.github.io/?https://github.com/eascarrunz/pathwaykg/blob/master/examples/hsa00400.html)
+[Go to the live visualization](https://eascarrunz.github.io/pathwaykg/examples/hsa00400.html)
