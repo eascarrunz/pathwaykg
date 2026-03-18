@@ -52,7 +52,7 @@ kgbuild -p hsa00010 > hsa00010.ttl
 
 To build a knowledge graph you only need to provide the option `-p` with a KEGG pathway entry corresponding to some organism. Entries are IDs made out of a three-letter organism code plus a 5 digit pathway code.
 
-For instance, "hsa00010" is the entry for the **H**omo **sa**piens glycolysis/gluconeogenesis pathway. The knowledge graph is build with this command:
+For instance, "hsa00010" is the entry for the _**H**omo **sa**piens_ glycolysis/gluconeogenesis pathway. The knowledge graph is built with this command:
 
 ```bash
 kgbuild -p hsa00010 > hsa00010.ttl
@@ -60,16 +60,16 @@ kgbuild -p hsa00010 > hsa00010.ttl
 
 This fetches pathway topology (KGML), gene records, reaction equations, and compound metadata from the KEGG REST API, then assembles them into an RDF graph in Turtle ("ttl") format.
 
-KEGG has webpages listing the [organism codes](https://www.genome.jp/kegg/tables/br08606.html) and [pathway codes](https://www.genome.jp/kegg/pathway.html) available. Not all organisms have all the possible pathways.
+KEGG has webpages listing the [organism codes](https://www.genome.jp/kegg/tables/br08606.html) and [pathway codes](https://www.genome.jp/kegg/pathway.html) available. Not all organisms have all the possible pathways. Reference pathways with entries starting with "map" and "ko" are **not** supported.
 
 ### Graph structure
 
 The knowledge graph contains the following node types and relationships:
 
 - **Gene** nodes with KEGG IDs, labels, UniProt cross-references, and KO/EC annotations
-- **KO Term** nodes (KEGG Orthologs) linking genes to their functional roles
+- **KO Term** nodes [(KEGG Orthologs)](https://www.genome.jp/kegg/ko.html) linking genes to their functional roles
 - **Reaction** nodes with directional equations, EC numbers, and substrate/product relationships
-- **Compound** nodes with names and links to reactions
+- **Compound** nodes with names, linked as substrates and products of reactions
 
 Genes are linked to reactions via `catalyzes` triples derived from KEGG's pathway topology (KGML), ensuring that only pathway-specific reactions are included.
 
@@ -78,21 +78,33 @@ Note that the substrates and products are simply defined by the script as the le
 
 ## Visualization
 
-Generate an interactive HTML visualization from a Turtle file:
+Generate an interactive HTML visualization from a Turtle file. Here, glycolysis/gluconeogenesis in _Homo sapiens_.
 
 ```bash
-visualize -i hsa00010.ttl -o hsa00010.html
+visualize -i hsa00010.ttl > hsa00010.html
 ```
 
-The visualization shows a pathway-level network: KO (ortholog) nodes connected to reaction nodes, with compound nodes as substrates and products. Nodes are colored by type (KO, reaction, compound) and display metadata on hover.
+The visualization is an abstracted representation of the metabolic network based on KO terms. Individual genes are not shown — they are aggregated under their [**KO (KEGG Orthology) terms**](https://www.genome.jp/kegg/ko.html), representing conserved functional roles rather than specific gene loci. KO nodes connect to reaction nodes, which connect to compound nodes, tracing how enzymatic steps transform metabolites through the pathway.
 
-### Pathway comparison
+Nodes types have different colours and shapes, and display metadata on hover.
+- **○ "Enzyme group" nodes**: represent a functional ortholog group of enzymes sharing the same KO term. The hover tooltip shows the KO description, how many organism-specific genes map to that KO, and their KEGG gene IDs.
+- **◇ Reaction nodes**: represent a biochemical reaction from the KEGG Reactions database. Labeled with the reaction definition (equation).
+- **□ Compound nodes**: metabolites that participate as substrates or products. Labeled with the compound name.
 
-Provide two Turtle files to visualize their overlap. Shared nodes are colored differently from nodes unique to each organism:
+You can zoom in and out on the graph to display or hide text labels on nodes and edges.
+
+### Pathway comparison mode
+
+You can use the visualization tool to compare pathways across species. You just need to provide two Turtle files to visualize their overlap. Here, glycolysis/gluconeogenesis in _Homo sapiens_ (hsa00010) and _Escherichia coli_ (eco00010).
 
 ```bash
-visualize -i hsa00010.ttl sce00010.ttl -o hsa-sce-00010.html
+visualize -i hsa00010.ttl eco00010.ttl > hsa-eco-00010.html
 ```
 
-This is useful for comparing how different organisms implement the same metabolic pathway, revealing which enzymatic steps are conserved and which are organism-specific.
+Nodes are colored by provenance instead of type: shared nodes (present in both organisms) are distinguished from nodes unique to each organism.
 
+- <img src="assets/color_teal.svg" height="14"> **Teal**: nodes unique to the first organism
+- <img src="assets/color_orange.svg" height="14"> **Orange**: nodes unique to the second organism
+- <img src="assets/color_purple.svg" height="14"> **Purple**: nodes present in both graphs
+
+Since KO terms, reactions, and compounds use organism-independent KEGG identifiers, this reveals evolutionary conservation and divergence at the functional level — which enzymatic steps are conserved and which are lineage-specific.
