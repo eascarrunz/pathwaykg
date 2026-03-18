@@ -1,0 +1,975 @@
+@prefix ec: <http://purl.uniprot.org/enzyme/> .
+@prefix eco: <https://github.com/eascarrunz/pathwaykg/organism/eco/> .
+@prefix kegg: <https://www.kegg.jp/entry/> .
+@prefix kg: <https://github.com/eascarrunz/pathwaykg/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+eco:b0114 a kg:Gene ;
+    rdfs:label "(RefSeq) pyruvate dehydrogenase E1 component" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0AFG8> ;
+    kg:catalyzes kegg:R00014,
+        kegg:R03270 ;
+    kg:hasEC ec:1.2.4.1 ;
+    kg:hasOrtholog kegg:K00163 ;
+    kg:keggID kegg:b0114 .
+
+eco:b0115 a kg:Gene ;
+    rdfs:label "(RefSeq) pyruvate dehydrogenase, E2 subunit" ;
+    owl:sameAs <https://identifiers.org/uniprot:P06959> ;
+    kg:catalyzes kegg:R02569 ;
+    kg:hasEC ec:2.3.1.12 ;
+    kg:hasOrtholog kegg:K00627 ;
+    kg:keggID kegg:b0115 .
+
+eco:b0116 a kg:Gene ;
+    rdfs:label "(RefSeq) lipoamide dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9P0> ;
+    kg:catalyzes kegg:R07618 ;
+    kg:hasEC ec:1.8.1.4 ;
+    kg:hasOrtholog kegg:K00382 ;
+    kg:keggID kegg:b0116 .
+
+eco:b0325 a kg:Gene ;
+    rdfs:label "(RefSeq) aldehyde reductase, NADPH-dependent" ;
+    owl:sameAs <https://identifiers.org/uniprot:P75691> ;
+    kg:catalyzes kegg:R00746 ;
+    kg:hasEC ec:1.1.1.2 ;
+    kg:hasOrtholog kegg:K13979 ;
+    kg:keggID kegg:b0325 .
+
+eco:b0356 a kg:Gene ;
+    rdfs:label "(RefSeq) S-(hydroxymethyl)glutathione dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P25437> ;
+    kg:catalyzes kegg:R00754 ;
+    kg:hasEC ec:1.1.1.1,
+        ec:1.1.1.284 ;
+    kg:hasOrtholog kegg:K00121 ;
+    kg:keggID kegg:b0356 .
+
+eco:b0688 a kg:Gene ;
+    rdfs:label "(RefSeq) phosphoglucomutase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P36938> ;
+    kg:catalyzes kegg:R00959 ;
+    kg:hasEC ec:5.4.2.2 ;
+    kg:hasOrtholog kegg:K01835 ;
+    kg:keggID kegg:b0688 .
+
+eco:b0755 a kg:Gene ;
+    rdfs:label "(RefSeq) 2,3-bisphosphoglycerate-dependent phosphoglycerate mutase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P62707> ;
+    kg:catalyzes kegg:R01518 ;
+    kg:hasEC ec:5.4.2.11 ;
+    kg:hasOrtholog kegg:K01834 ;
+    kg:keggID kegg:b0755 .
+
+eco:b0756 a kg:Gene ;
+    rdfs:label "(RefSeq) galactose-1-epimerase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9C3> ;
+    kg:catalyzes kegg:R01602 ;
+    kg:hasEC ec:5.1.3.3 ;
+    kg:hasOrtholog kegg:K01785 ;
+    kg:keggID kegg:b0756 .
+
+eco:b1002 a kg:Gene ;
+    rdfs:label "(RefSeq) glucose-1-phosphatase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P19926> ;
+    kg:catalyzes kegg:R00947 ;
+    kg:hasEC ec:3.1.3.10 ;
+    kg:hasOrtholog kegg:K01085 ;
+    kg:keggID kegg:b1002 .
+
+eco:b1101 a kg:Gene ;
+    rdfs:label "(RefSeq) glucose-specific PTS enzyme IIBC component" ;
+    owl:sameAs <https://identifiers.org/uniprot:P69786> ;
+    kg:catalyzes kegg:R02738 ;
+    kg:hasEC ec:2.7.1.199 ;
+    kg:hasOrtholog kegg:K02779 ;
+    kg:keggID kegg:b1101 .
+
+eco:b1241 a kg:Gene ;
+    rdfs:label "(RefSeq) fused acetaldehyde-CoA dehydrogenase and iron-dependent alcohol dehydrogenasealdehyde/alcohol dehydrogenase AdhE" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9Q7> ;
+    kg:catalyzes kegg:R00754 ;
+    kg:hasEC ec:1.1.1.1,
+        ec:1.2.1.10 ;
+    kg:hasOrtholog kegg:K04072 ;
+    kg:keggID kegg:b1241 .
+
+eco:b1378 a kg:Gene ;
+    rdfs:label "(RefSeq) putative pyruvate-flavodoxin oxidoreductase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P52647> ;
+    kg:catalyzes kegg:R01196 ;
+    kg:hasEC ec:1.2.7.1,
+        ec:1.2.8.1 ;
+    kg:hasOrtholog kegg:K03737 ;
+    kg:keggID kegg:b1378 .
+
+eco:b1478 a kg:Gene ;
+    rdfs:label "(RefSeq) ethanol dehydrogenase/alcohol dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P39451> ;
+    kg:catalyzes kegg:R00754 ;
+    kg:hasEC ec:1.1.1.1 ;
+    kg:hasOrtholog kegg:K13953 ;
+    kg:keggID kegg:b1478 .
+
+eco:b1621 a kg:Gene ;
+    rdfs:label "(RefSeq) PTS enzyme IIBC component MalX" ;
+    owl:sameAs <https://identifiers.org/uniprot:P19642> ;
+    kg:catalyzes kegg:R02738 ;
+    kg:hasEC ec:2.7.1.199,
+        ec:2.7.1.208 ;
+    kg:hasOrtholog kegg:K02791 ;
+    kg:keggID kegg:b1621 .
+
+eco:b1676 a kg:Gene ;
+    rdfs:label "(RefSeq) pyruvate kinase 1" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0AD61> ;
+    kg:catalyzes kegg:R00200 ;
+    kg:hasEC ec:2.7.1.40 ;
+    kg:hasOrtholog kegg:K00873 ;
+    kg:keggID kegg:b1676 .
+
+eco:b1702 a kg:Gene ;
+    rdfs:label "(RefSeq) phosphoenolpyruvate synthetase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P23538> ;
+    kg:catalyzes kegg:R00199 ;
+    kg:hasEC ec:2.7.9.2 ;
+    kg:hasOrtholog kegg:K01007 ;
+    kg:keggID kegg:b1702 .
+
+eco:b1723 a kg:Gene ;
+    rdfs:label "(RefSeq) 6-phosphofructokinase 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:P06999> ;
+    kg:catalyzes kegg:R00756 ;
+    kg:hasEC ec:2.7.1.11 ;
+    kg:hasOrtholog kegg:K16370 ;
+    kg:keggID kegg:b1723 .
+
+eco:b1734 a kg:Gene ;
+    rdfs:label "(RefSeq) monoacetylchitobiose-6-phosphate hydrolase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P17411> ;
+    kg:catalyzes kegg:R05133,
+        kegg:R05134 ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasOrtholog kegg:K01222 ;
+    kg:keggID kegg:b1734 .
+
+eco:b1779 a kg:Gene ;
+    rdfs:label "(RefSeq) glyceraldehyde-3-phosphate dehydrogenase A" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9B2> ;
+    kg:catalyzes kegg:R01061 ;
+    kg:hasEC ec:1.2.1.12 ;
+    kg:hasOrtholog kegg:K00134 ;
+    kg:keggID kegg:b1779 .
+
+eco:b1780 a kg:Gene ;
+    rdfs:label "(RefSeq) putative aldose 1-epimerase YeaD" ;
+    owl:sameAs <https://identifiers.org/uniprot:P39173> ;
+    kg:catalyzes kegg:R02739 ;
+    kg:hasEC ec:5.1.3.15 ;
+    kg:hasOrtholog kegg:K01792 ;
+    kg:keggID kegg:b1780 .
+
+eco:b1854 a kg:Gene ;
+    rdfs:label "(RefSeq) pyruvate kinase 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:P21599> ;
+    kg:catalyzes kegg:R00200 ;
+    kg:hasEC ec:2.7.1.40 ;
+    kg:hasOrtholog kegg:K00873 ;
+    kg:keggID kegg:b1854 .
+
+eco:b2097 a kg:Gene ;
+    rdfs:label "(RefSeq) fructose-bisphosphate aldolase class I" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A991> ;
+    kg:catalyzes kegg:R01068 ;
+    kg:hasEC ec:4.1.2.13 ;
+    kg:hasOrtholog kegg:K11645 ;
+    kg:keggID kegg:b2097 .
+
+eco:b2388 a kg:Gene ;
+    rdfs:label "(RefSeq) glucokinase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6V8> ;
+    kg:catalyzes kegg:R01600,
+        kegg:R01786 ;
+    kg:hasEC ec:2.7.1.2 ;
+    kg:hasOrtholog kegg:K00845 ;
+    kg:keggID kegg:b2388 .
+
+eco:b2417 a kg:Gene ;
+    rdfs:label "(RefSeq) Enzyme IIA(Glc)" ;
+    owl:sameAs <https://identifiers.org/uniprot:P69783> ;
+    kg:catalyzes kegg:R02738,
+        kegg:R04394,
+        kegg:R05132 ;
+    kg:hasEC ec:2.7.1.- ;
+    kg:hasOrtholog kegg:K02777 ;
+    kg:keggID kegg:b2417 .
+
+eco:b2453 a kg:Gene ;
+    rdfs:label "(RefSeq) putative alcohol dehydrogenase EutG" ;
+    owl:sameAs <https://identifiers.org/uniprot:P76553> ;
+    kg:catalyzes kegg:R00754 ;
+    kg:hasOrtholog kegg:K04022 ;
+    kg:keggID kegg:b2453 .
+
+eco:b2715 a kg:Gene ;
+    rdfs:label "(RefSeq) beta-glucoside specific PTS enzyme IIBC component" ;
+    owl:sameAs <https://identifiers.org/uniprot:P24241> ;
+    kg:catalyzes kegg:R04394,
+        kegg:R05132 ;
+    kg:hasEC ec:2.7.1.- ;
+    kg:hasOrtholog kegg:K02753 ;
+    kg:keggID kegg:b2715 .
+
+eco:b2716 a kg:Gene ;
+    rdfs:label "(RefSeq) 6-phospho-beta-glucosidase AscB" ;
+    owl:sameAs <https://identifiers.org/uniprot:P24240> ;
+    kg:catalyzes kegg:R05133,
+        kegg:R05134 ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasOrtholog kegg:K01223 ;
+    kg:keggID kegg:b2716 .
+
+eco:b2779 a kg:Gene ;
+    rdfs:label "(RefSeq) enolase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6P9> ;
+    kg:catalyzes kegg:R00658 ;
+    kg:hasEC ec:4.2.1.11 ;
+    kg:hasOrtholog kegg:K01689 ;
+    kg:keggID kegg:b2779 .
+
+eco:b2901 a kg:Gene ;
+    rdfs:label "(RefSeq) 6-phospho-beta-glucosidase A" ;
+    owl:sameAs <https://identifiers.org/uniprot:Q46829> ;
+    kg:catalyzes kegg:R05133,
+        kegg:R05134 ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasOrtholog kegg:K01223 ;
+    kg:keggID kegg:b2901 .
+
+eco:b2925 a kg:Gene ;
+    rdfs:label "(RefSeq) fructose-bisphosphate aldolase class II" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0AB71> ;
+    kg:catalyzes kegg:R01068 ;
+    kg:hasEC ec:4.1.2.13 ;
+    kg:hasOrtholog kegg:K01624 ;
+    kg:keggID kegg:b2925 .
+
+eco:b2926 a kg:Gene ;
+    rdfs:label "(RefSeq) phosphoglycerate kinase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A799> ;
+    kg:catalyzes kegg:R01512 ;
+    kg:hasEC ec:2.7.2.3 ;
+    kg:hasOrtholog kegg:K00927 ;
+    kg:keggID kegg:b2926 .
+
+eco:b2930 a kg:Gene ;
+    rdfs:label "(RefSeq) fructose 1,6-bisphosphatase YggF" ;
+    owl:sameAs <https://identifiers.org/uniprot:P21437> ;
+    kg:catalyzes kegg:R00762 ;
+    kg:hasEC ec:3.1.3.11 ;
+    kg:hasOrtholog kegg:K02446 ;
+    kg:keggID kegg:b2930 .
+
+eco:b3403 a kg:Gene ;
+    rdfs:label "(RefSeq) phosphoenolpyruvate carboxykinase (ATP)" ;
+    owl:sameAs <https://identifiers.org/uniprot:P22259> ;
+    kg:catalyzes kegg:R00341 ;
+    kg:hasEC ec:4.1.1.49 ;
+    kg:hasOrtholog kegg:K01610 ;
+    kg:keggID kegg:b3403 .
+
+eco:b3588 a kg:Gene ;
+    rdfs:label "(RefSeq) aldehyde dehydrogenase B" ;
+    owl:sameAs <https://identifiers.org/uniprot:P37685> ;
+    kg:catalyzes kegg:R00711 ;
+    kg:hasEC ec:1.2.1.- ;
+    kg:hasOrtholog kegg:K00138 ;
+    kg:keggID kegg:b3588 .
+
+eco:b3589 a kg:Gene ;
+    rdfs:label "(RefSeq) L-threonine dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P37686> ;
+    kg:catalyzes kegg:R00754 ;
+    kg:hasEC ec:1.1.1.1 ;
+    kg:hasOrtholog kegg:K13954 ;
+    kg:keggID kegg:b3589 .
+
+eco:b3612 a kg:Gene ;
+    rdfs:label "(RefSeq) 2,3-bisphosphoglycerate-independent phosphoglycerate mutase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P37689> ;
+    kg:catalyzes kegg:R01518 ;
+    kg:hasEC ec:5.4.2.12 ;
+    kg:hasOrtholog kegg:K15633 ;
+    kg:keggID kegg:b3612 .
+
+eco:b3721 a kg:Gene ;
+    rdfs:label "(RefSeq) 6-phospho-beta-glucosidase B" ;
+    owl:sameAs <https://identifiers.org/uniprot:P11988> ;
+    kg:catalyzes kegg:R05133,
+        kegg:R05134 ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasOrtholog kegg:K01223 ;
+    kg:keggID kegg:b3721 .
+
+eco:b3885 a kg:Gene ;
+    rdfs:label "(RefSeq) alpha-D-glucose-1-phosphate phosphatase YihX" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A8Y3> ;
+    kg:catalyzes kegg:R00947 ;
+    kg:hasEC ec:3.1.3.10 ;
+    kg:hasOrtholog kegg:K20866 ;
+    kg:keggID kegg:b3885 .
+
+eco:b3916 a kg:Gene ;
+    rdfs:label "(RefSeq) 6-phosphofructokinase 1" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A796> ;
+    kg:catalyzes kegg:R00756 ;
+    kg:hasEC ec:2.7.1.11 ;
+    kg:hasOrtholog kegg:K00850 ;
+    kg:keggID kegg:b3916 .
+
+eco:b3919 a kg:Gene ;
+    rdfs:label "(RefSeq) triose-phosphate isomerase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A858> ;
+    kg:catalyzes kegg:R01015 ;
+    kg:hasEC ec:5.3.1.1 ;
+    kg:hasOrtholog kegg:K01803 ;
+    kg:keggID kegg:b3919 .
+
+eco:b3925 a kg:Gene ;
+    rdfs:label "(RefSeq) fructose-1,6-bisphosphatase 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9C9> ;
+    kg:catalyzes kegg:R00762 ;
+    kg:hasEC ec:3.1.3.11 ;
+    kg:hasOrtholog kegg:K02446 ;
+    kg:keggID kegg:b3925 .
+
+eco:b4025 a kg:Gene ;
+    rdfs:label "(RefSeq) glucose-6-phosphate isomerase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6T1> ;
+    kg:catalyzes kegg:R02739,
+        kegg:R13199 ;
+    kg:hasEC ec:5.3.1.9 ;
+    kg:hasOrtholog kegg:K01810 ;
+    kg:keggID kegg:b4025 .
+
+eco:b4069 a kg:Gene ;
+    rdfs:label "(RefSeq) acetyl-CoA synthetase (AMP-forming)" ;
+    owl:sameAs <https://identifiers.org/uniprot:P27550> ;
+    kg:catalyzes kegg:R00235 ;
+    kg:hasEC ec:6.2.1.1 ;
+    kg:hasOrtholog kegg:K01895 ;
+    kg:keggID kegg:b4069 .
+
+eco:b4232 a kg:Gene ;
+    rdfs:label "(RefSeq) fructose-1,6-bisphosphatase 1" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A993> ;
+    kg:catalyzes kegg:R00762 ;
+    kg:hasEC ec:3.1.3.11 ;
+    kg:hasOrtholog kegg:K03841 ;
+    kg:keggID kegg:b4232 .
+
+eco:b4269 a kg:Gene ;
+    rdfs:label "(RefSeq) NADPH-dependent aldehyde reductase Ahr" ;
+    owl:sameAs <https://identifiers.org/uniprot:P27250> ;
+    kg:catalyzes kegg:R00746 ;
+    kg:hasEC ec:1.1.1.183,
+        ec:1.1.1.2 ;
+    kg:hasOrtholog kegg:K12957 ;
+    kg:keggID kegg:b4269 .
+
+eco:b4395 a kg:Gene ;
+    rdfs:label "(RefSeq) putative phosphatase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A7A2> ;
+    kg:catalyzes kegg:R01518 ;
+    kg:hasEC ec:5.4.2.11 ;
+    kg:hasOrtholog kegg:K15634 ;
+    kg:keggID kegg:b4395 .
+
+kegg:C00013 a kg:Compound ;
+    rdfs:label "Diphosphate" .
+
+kegg:C00031 a kg:Compound ;
+    rdfs:label "D-Glucose" .
+
+kegg:C00036 a kg:Compound ;
+    rdfs:label "Oxaloacetate" .
+
+kegg:C00138 a kg:Compound ;
+    rdfs:label "Reduced ferredoxin" .
+
+kegg:C00139 a kg:Compound ;
+    rdfs:label "Oxidized ferredoxin" .
+
+kegg:C00530 a kg:Compound ;
+    rdfs:label "Hydroquinone" .
+
+kegg:C01451 a kg:Compound ;
+    rdfs:label "Salicin" .
+
+kegg:C02323 a kg:Compound ;
+    rdfs:label "Salicyl alcohol" .
+
+kegg:C06186 a kg:Compound ;
+    rdfs:label "Arbutin" .
+
+kegg:K00121 a kg:KOTerm ;
+    rdfs:label "S-(hydroxymethyl)glutathione dehydrogenase / alcohol dehydrogenase [EC:1.1.1.284 1.1.1.1]" ;
+    kg:hasEC ec:1.1.1.1,
+        ec:1.1.1.284 .
+
+kegg:K00134 a kg:KOTerm ;
+    rdfs:label "glyceraldehyde 3-phosphate dehydrogenase (phosphorylating) [EC:1.2.1.12]" ;
+    kg:hasEC ec:1.2.1.12 .
+
+kegg:K00138 a kg:KOTerm ;
+    rdfs:label "aldehyde dehydrogenase [EC:1.2.1.-]" ;
+    kg:hasEC ec:1.2.1.- .
+
+kegg:K00163 a kg:KOTerm ;
+    rdfs:label "pyruvate dehydrogenase E1 component [EC:1.2.4.1]" ;
+    kg:hasEC ec:1.2.4.1 .
+
+kegg:K00382 a kg:KOTerm ;
+    rdfs:label "dihydrolipoyl dehydrogenase [EC:1.8.1.4]" ;
+    kg:hasEC ec:1.8.1.4 .
+
+kegg:K00627 a kg:KOTerm ;
+    rdfs:label "pyruvate dehydrogenase E2 component (dihydrolipoyllysine-residue acetyltransferase) [EC:2.3.1.12]" ;
+    kg:hasEC ec:2.3.1.12 .
+
+kegg:K00845 a kg:KOTerm ;
+    rdfs:label "glucokinase [EC:2.7.1.2]" ;
+    kg:hasEC ec:2.7.1.2 .
+
+kegg:K00850 a kg:KOTerm ;
+    rdfs:label "6-phosphofructokinase 1 [EC:2.7.1.11]" ;
+    kg:hasEC ec:2.7.1.11 .
+
+kegg:K00927 a kg:KOTerm ;
+    rdfs:label "phosphoglycerate kinase [EC:2.7.2.3]" ;
+    kg:hasEC ec:2.7.2.3 .
+
+kegg:K01007 a kg:KOTerm ;
+    rdfs:label "pyruvate, water dikinase [EC:2.7.9.2]" ;
+    kg:hasEC ec:2.7.9.2 .
+
+kegg:K01085 a kg:KOTerm ;
+    rdfs:label "glucose-1-phosphatase [EC:3.1.3.10]" ;
+    kg:hasEC ec:3.1.3.10 .
+
+kegg:K01222 a kg:KOTerm ;
+    rdfs:label "6-phospho-beta-glucosidase [EC:3.2.1.86]" ;
+    kg:hasEC ec:3.2.1.86 .
+
+kegg:K01610 a kg:KOTerm ;
+    rdfs:label "phosphoenolpyruvate carboxykinase (ATP) [EC:4.1.1.49]" ;
+    kg:hasEC ec:4.1.1.49 .
+
+kegg:K01624 a kg:KOTerm ;
+    rdfs:label "fructose-bisphosphate aldolase, class II [EC:4.1.2.13]" ;
+    kg:hasEC ec:4.1.2.13 .
+
+kegg:K01689 a kg:KOTerm ;
+    rdfs:label "enolase 1/2/3 [EC:4.2.1.11]" ;
+    kg:hasEC ec:4.2.1.11 .
+
+kegg:K01785 a kg:KOTerm ;
+    rdfs:label "aldose 1-epimerase [EC:5.1.3.3]" ;
+    kg:hasEC ec:5.1.3.3 .
+
+kegg:K01792 a kg:KOTerm ;
+    rdfs:label "glucose-6-phosphate 1-epimerase [EC:5.1.3.15]" ;
+    kg:hasEC ec:5.1.3.15 .
+
+kegg:K01803 a kg:KOTerm ;
+    rdfs:label "triosephosphate isomerase (TIM) [EC:5.3.1.1]" ;
+    kg:hasEC ec:5.3.1.1 .
+
+kegg:K01810 a kg:KOTerm ;
+    rdfs:label "glucose-6-phosphate isomerase [EC:5.3.1.9]" ;
+    kg:hasEC ec:5.3.1.9 .
+
+kegg:K01834 a kg:KOTerm ;
+    rdfs:label "2,3-bisphosphoglycerate-dependent phosphoglycerate mutase [EC:5.4.2.11]" ;
+    kg:hasEC ec:5.4.2.11 .
+
+kegg:K01835 a kg:KOTerm ;
+    rdfs:label "phosphoglucomutase [EC:5.4.2.2]" ;
+    kg:hasEC ec:5.4.2.2 .
+
+kegg:K01895 a kg:KOTerm ;
+    rdfs:label "acetyl-CoA synthetase [EC:6.2.1.1]" ;
+    kg:hasEC ec:6.2.1.1 .
+
+kegg:K02753 a kg:KOTerm ;
+    rdfs:label "beta-glucoside (arbutin/salicin/cellobiose) PTS system EIICB component [EC:2.7.1.-]" ;
+    kg:hasEC ec:2.7.1.- .
+
+kegg:K02777 a kg:KOTerm ;
+    rdfs:label "sugar PTS system EIIA component [EC:2.7.1.-]" ;
+    kg:hasEC ec:2.7.1.- .
+
+kegg:K02779 a kg:KOTerm ;
+    rdfs:label "glucose PTS system EIICB or EIICBA component [EC:2.7.1.199]" ;
+    kg:hasEC ec:2.7.1.199 .
+
+kegg:K02791 a kg:KOTerm ;
+    rdfs:label "maltose/glucose PTS system EIICB component [EC:2.7.1.199 2.7.1.208]" ;
+    kg:hasEC ec:2.7.1.199,
+        ec:2.7.1.208 .
+
+kegg:K03737 a kg:KOTerm ;
+    rdfs:label "pyruvate-ferredoxin/flavodoxin oxidoreductase [EC:1.2.7.1 1.2.8.1]" ;
+    kg:hasEC ec:1.2.7.1,
+        ec:1.2.8.1 .
+
+kegg:K03841 a kg:KOTerm ;
+    rdfs:label "fructose-1,6-bisphosphatase I [EC:3.1.3.11]" ;
+    kg:hasEC ec:3.1.3.11 .
+
+kegg:K04022 a kg:KOTerm ;
+    rdfs:label "alcohol dehydrogenase" .
+
+kegg:K04072 a kg:KOTerm ;
+    rdfs:label "acetaldehyde dehydrogenase / alcohol dehydrogenase [EC:1.2.1.10 1.1.1.1]" ;
+    kg:hasEC ec:1.1.1.1,
+        ec:1.2.1.10 .
+
+kegg:K11645 a kg:KOTerm ;
+    rdfs:label "fructose-bisphosphate aldolase, class I [EC:4.1.2.13]" ;
+    kg:hasEC ec:4.1.2.13 .
+
+kegg:K12957 a kg:KOTerm ;
+    rdfs:label "alcohol/geraniol dehydrogenase (NADP+) [EC:1.1.1.2 1.1.1.183]" ;
+    kg:hasEC ec:1.1.1.183,
+        ec:1.1.1.2 .
+
+kegg:K13953 a kg:KOTerm ;
+    rdfs:label "alcohol dehydrogenase, propanol-preferring [EC:1.1.1.1]" ;
+    kg:hasEC ec:1.1.1.1 .
+
+kegg:K13954 a kg:KOTerm ;
+    rdfs:label "alcohol dehydrogenase [EC:1.1.1.1]" ;
+    kg:hasEC ec:1.1.1.1 .
+
+kegg:K13979 a kg:KOTerm ;
+    rdfs:label "alcohol dehydrogenase (NADP+) [EC:1.1.1.2]" ;
+    kg:hasEC ec:1.1.1.2 .
+
+kegg:K15633 a kg:KOTerm ;
+    rdfs:label "2,3-bisphosphoglycerate-independent phosphoglycerate mutase [EC:5.4.2.12]" ;
+    kg:hasEC ec:5.4.2.12 .
+
+kegg:K15634 a kg:KOTerm ;
+    rdfs:label "2,3-bisphosphoglycerate-dependent phosphoglycerate mutase [EC:5.4.2.11]" ;
+    kg:hasEC ec:5.4.2.11 .
+
+kegg:K16370 a kg:KOTerm ;
+    rdfs:label "6-phosphofructokinase 2 [EC:2.7.1.11]" ;
+    kg:hasEC ec:2.7.1.11 .
+
+kegg:K20866 a kg:KOTerm ;
+    rdfs:label "glucose-1-phosphatase [EC:3.1.3.10]" ;
+    kg:hasEC ec:3.1.3.10 .
+
+kegg:R00014 a kg:Reaction ;
+    rdfs:label "Pyruvate + Thiamin diphosphate <=> 2-(alpha-Hydroxyethyl)thiamine diphosphate + CO2" ;
+    kg:hasEC ec:1.2.4.1,
+        ec:2.2.1.6,
+        ec:4.1.1.1 ;
+    kg:hasProduct kegg:C00011,
+        kegg:C05125 ;
+    kg:hasSubstrate kegg:C00022,
+        kegg:C00068 .
+
+kegg:R00199 a kg:Reaction ;
+    rdfs:label "ATP + Pyruvate + H2O <=> AMP + Phosphoenolpyruvate + Orthophosphate" ;
+    kg:hasEC ec:2.7.9.2 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C00020,
+        kegg:C00074 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00002,
+        kegg:C00022 .
+
+kegg:R00235 a kg:Reaction ;
+    rdfs:label "ATP + Acetate + CoA <=> AMP + Diphosphate + Acetyl-CoA" ;
+    kg:hasEC ec:6.2.1.1 ;
+    kg:hasProduct kegg:C00013,
+        kegg:C00020,
+        kegg:C00024 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00010,
+        kegg:C00033 .
+
+kegg:R00341 a kg:Reaction ;
+    rdfs:label "ATP + Oxaloacetate <=> ADP + Phosphoenolpyruvate + CO2" ;
+    kg:hasEC ec:4.1.1.49 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C00011,
+        kegg:C00074 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00036 .
+
+kegg:R00658 a kg:Reaction ;
+    rdfs:label "2-Phospho-D-glycerate <=> Phosphoenolpyruvate + H2O" ;
+    kg:hasEC ec:4.2.1.11 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00074 ;
+    kg:hasSubstrate kegg:C00631 .
+
+kegg:R00711 a kg:Reaction ;
+    rdfs:label "Acetaldehyde + NADP+ + H2O <=> Acetate + NADPH + H+" ;
+    kg:hasEC ec:1.2.1.-,
+        ec:1.2.1.4,
+        ec:1.2.1.5 ;
+    kg:hasProduct kegg:C00005,
+        kegg:C00033,
+        kegg:C00080 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00006,
+        kegg:C00084 .
+
+kegg:R00959 a kg:Reaction ;
+    rdfs:label "D-Glucose 1-phosphate <=> alpha-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:5.4.2.2,
+        ec:5.4.2.5 ;
+    kg:hasProduct kegg:C00668 ;
+    kg:hasSubstrate kegg:C00103 .
+
+kegg:R01015 a kg:Reaction ;
+    rdfs:label "D-Glyceraldehyde 3-phosphate <=> Glycerone phosphate" ;
+    kg:hasEC ec:5.3.1.1 ;
+    kg:hasProduct kegg:C00111 ;
+    kg:hasSubstrate kegg:C00118 .
+
+kegg:R01061 a kg:Reaction ;
+    rdfs:label "D-Glyceraldehyde 3-phosphate + Orthophosphate + NAD+ <=> 3-Phospho-D-glyceroyl phosphate + NADH + H+" ;
+    kg:hasEC ec:1.2.1.12,
+        ec:1.2.1.59 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00080,
+        kegg:C00236 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C00009,
+        kegg:C00118 .
+
+kegg:R01196 a kg:Reaction ;
+    rdfs:label "2 Reduced ferredoxin + Acetyl-CoA + CO2 + 2 H+ <=> 2 Oxidized ferredoxin + Pyruvate + CoA" ;
+    kg:hasEC ec:1.2.7.1,
+        ec:1.2.7.11 ;
+    kg:hasProduct kegg:C00010,
+        kegg:C00022,
+        kegg:C00139 ;
+    kg:hasSubstrate kegg:C00011,
+        kegg:C00024,
+        kegg:C00080,
+        kegg:C00138 .
+
+kegg:R01512 a kg:Reaction ;
+    rdfs:label "ATP + 3-Phospho-D-glycerate <=> ADP + 3-Phospho-D-glyceroyl phosphate" ;
+    kg:hasEC ec:2.7.2.3 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C00236 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00197 .
+
+kegg:R01600 a kg:Reaction ;
+    rdfs:label "ATP + beta-D-Glucose <=> ADP + beta-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:2.7.1.1,
+        ec:2.7.1.2 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C01172 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00221 .
+
+kegg:R01602 a kg:Reaction ;
+    rdfs:label "alpha-D-Glucose <=> beta-D-Glucose" ;
+    kg:hasEC ec:5.1.3.3 ;
+    kg:hasProduct kegg:C00221 ;
+    kg:hasSubstrate kegg:C00267 .
+
+kegg:R01786 a kg:Reaction ;
+    rdfs:label "ATP + alpha-D-Glucose <=> ADP + alpha-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:2.7.1.1,
+        ec:2.7.1.2 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C00668 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00267 .
+
+kegg:R02569 a kg:Reaction ;
+    rdfs:label "Acetyl-CoA + Enzyme N6-(dihydrolipoyl)lysine <=> CoA + [Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine" ;
+    kg:hasEC ec:2.3.1.12 ;
+    kg:hasProduct kegg:C00010,
+        kegg:C16255 ;
+    kg:hasSubstrate kegg:C00024,
+        kegg:C15973 .
+
+kegg:R03270 a kg:Reaction ;
+    rdfs:label "2-(alpha-Hydroxyethyl)thiamine diphosphate + Enzyme N6-(lipoyl)lysine <=> [Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine + Thiamin diphosphate" ;
+    kg:hasEC ec:1.2.4.1 ;
+    kg:hasProduct kegg:C00068,
+        kegg:C16255 ;
+    kg:hasSubstrate kegg:C05125,
+        kegg:C15972 .
+
+kegg:R07618 a kg:Reaction ;
+    rdfs:label "Enzyme N6-(dihydrolipoyl)lysine + NAD+ <=> Enzyme N6-(lipoyl)lysine + NADH + H+" ;
+    kg:hasEC ec:1.8.1.4 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00080,
+        kegg:C15972 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C15973 .
+
+kegg:R13199 a kg:Reaction ;
+    rdfs:label "alpha-D-Glucose 6-phosphate <=> D-Fructose 6-phosphate" ;
+    kg:hasEC ec:5.3.1.9 ;
+    kg:hasProduct kegg:C00085 ;
+    kg:hasSubstrate kegg:C00668 .
+
+kegg:C00005 a kg:Compound ;
+    rdfs:label "NADPH" .
+
+kegg:C00006 a kg:Compound ;
+    rdfs:label "NADP+" .
+
+kegg:C00020 a kg:Compound ;
+    rdfs:label "AMP" .
+
+kegg:C00033 a kg:Compound ;
+    rdfs:label "Acetate" .
+
+kegg:C00068 a kg:Compound ;
+    rdfs:label "Thiamin diphosphate" .
+
+kegg:C00103 a kg:Compound ;
+    rdfs:label "D-Glucose 1-phosphate" .
+
+kegg:C00111 a kg:Compound ;
+    rdfs:label "Glycerone phosphate" .
+
+kegg:C00197 a kg:Compound ;
+    rdfs:label "3-Phospho-D-glycerate" .
+
+kegg:C00221 a kg:Compound ;
+    rdfs:label "beta-D-Glucose" .
+
+kegg:C00236 a kg:Compound ;
+    rdfs:label "3-Phospho-D-glyceroyl phosphate" .
+
+kegg:C00469 a kg:Compound ;
+    rdfs:label "Ethanol" .
+
+kegg:C00631 a kg:Compound ;
+    rdfs:label "2-Phospho-D-glycerate" .
+
+kegg:C05125 a kg:Compound ;
+    rdfs:label "2-(alpha-Hydroxyethyl)thiamine diphosphate" .
+
+kegg:C06187 a kg:Compound ;
+    rdfs:label "Arbutin 6-phosphate" .
+
+kegg:C06188 a kg:Compound ;
+    rdfs:label "Salicin 6-phosphate" .
+
+kegg:C15972 a kg:Compound ;
+    rdfs:label "Enzyme N6-(lipoyl)lysine" .
+
+kegg:C15973 a kg:Compound ;
+    rdfs:label "Enzyme N6-(dihydrolipoyl)lysine" .
+
+kegg:C16255 a kg:Compound ;
+    rdfs:label "[Dihydrolipoyllysine-residue acetyltransferase] S-acetyldihydrolipoyllysine" .
+
+kegg:K00873 a kg:KOTerm ;
+    rdfs:label "pyruvate kinase [EC:2.7.1.40]" ;
+    kg:hasEC ec:2.7.1.40 .
+
+kegg:K02446 a kg:KOTerm ;
+    rdfs:label "fructose-1,6-bisphosphatase II [EC:3.1.3.11]" ;
+    kg:hasEC ec:3.1.3.11 .
+
+kegg:R00200 a kg:Reaction ;
+    rdfs:label "ATP + Pyruvate <=> ADP + Phosphoenolpyruvate" ;
+    kg:hasEC ec:2.7.1.40 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C00074 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00022 .
+
+kegg:R00746 a kg:Reaction ;
+    rdfs:label "Ethanol + NADP+ <=> Acetaldehyde + NADPH + H+" ;
+    kg:hasEC ec:1.1.1.2,
+        ec:1.1.1.71 ;
+    kg:hasProduct kegg:C00005,
+        kegg:C00080,
+        kegg:C00084 ;
+    kg:hasSubstrate kegg:C00006,
+        kegg:C00469 .
+
+kegg:R00756 a kg:Reaction ;
+    rdfs:label "ATP + D-Fructose 6-phosphate <=> ADP + D-Fructose 1,6-bisphosphate" ;
+    kg:hasEC ec:2.7.1.11 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C00354 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00085 .
+
+kegg:R00947 a kg:Reaction ;
+    rdfs:label "D-Glucose 1-phosphate + H2O <=> alpha-D-Glucose + Orthophosphate" ;
+    kg:hasEC ec:3.1.3.10 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C00267 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00103 .
+
+kegg:R01068 a kg:Reaction ;
+    rdfs:label "D-Fructose 1,6-bisphosphate <=> Glycerone phosphate + D-Glyceraldehyde 3-phosphate" ;
+    kg:hasEC ec:4.1.2.13 ;
+    kg:hasProduct kegg:C00111,
+        kegg:C00118 ;
+    kg:hasSubstrate kegg:C00354 .
+
+kegg:R02739 a kg:Reaction ;
+    rdfs:label "alpha-D-Glucose 6-phosphate <=> beta-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:5.1.3.15,
+        ec:5.3.1.9 ;
+    kg:hasProduct kegg:C01172 ;
+    kg:hasSubstrate kegg:C00668 .
+
+kegg:R04394 a kg:Reaction ;
+    rdfs:label "Protein N(pi)-phospho-L-histidine + Salicin <=> Protein histidine + Salicin 6-phosphate" ;
+    kg:hasEC ec:2.7.1.- ;
+    kg:hasProduct kegg:C00615,
+        kegg:C06188 ;
+    kg:hasSubstrate kegg:C01451,
+        kegg:C04261 .
+
+kegg:R05132 a kg:Reaction ;
+    rdfs:label "Protein N(pi)-phospho-L-histidine + Arbutin <=> Protein histidine + Arbutin 6-phosphate" ;
+    kg:hasEC ec:2.7.1.- ;
+    kg:hasProduct kegg:C00615,
+        kegg:C06187 ;
+    kg:hasSubstrate kegg:C04261,
+        kegg:C06186 .
+
+kegg:C00003 a kg:Compound ;
+    rdfs:label "NAD+" .
+
+kegg:C00004 a kg:Compound ;
+    rdfs:label "NADH" .
+
+kegg:C00010 a kg:Compound ;
+    rdfs:label "CoA" .
+
+kegg:C00011 a kg:Compound ;
+    rdfs:label "CO2" .
+
+kegg:C00024 a kg:Compound ;
+    rdfs:label "Acetyl-CoA" .
+
+kegg:C00084 a kg:Compound ;
+    rdfs:label "Acetaldehyde" .
+
+kegg:C00085 a kg:Compound ;
+    rdfs:label "D-Fructose 6-phosphate" .
+
+kegg:C00118 a kg:Compound ;
+    rdfs:label "D-Glyceraldehyde 3-phosphate" .
+
+kegg:C00267 a kg:Compound ;
+    rdfs:label "alpha-D-Glucose" .
+
+kegg:C00354 a kg:Compound ;
+    rdfs:label "D-Fructose 1,6-bisphosphate" .
+
+kegg:C00615 a kg:Compound ;
+    rdfs:label "Protein histidine" .
+
+kegg:C04261 a kg:Compound ;
+    rdfs:label "Protein N(pi)-phospho-L-histidine" .
+
+kegg:K01223 a kg:KOTerm ;
+    rdfs:label "6-phospho-beta-glucosidase [EC:3.2.1.86]" ;
+    kg:hasEC ec:3.2.1.86 .
+
+kegg:R00762 a kg:Reaction ;
+    rdfs:label "D-Fructose 1,6-bisphosphate + H2O <=> D-Fructose 6-phosphate + Orthophosphate" ;
+    kg:hasEC ec:3.1.3.11 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C00085 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00354 .
+
+kegg:R01518 a kg:Reaction ;
+    rdfs:label "2-Phospho-D-glycerate <=> 3-Phospho-D-glycerate" ;
+    kg:hasEC ec:5.4.2.11,
+        ec:5.4.2.12 ;
+    kg:hasProduct kegg:C00197 ;
+    kg:hasSubstrate kegg:C00631 .
+
+kegg:R02738 a kg:Reaction ;
+    rdfs:label "Protein N(pi)-phospho-L-histidine + D-Glucose <=> Protein histidine + alpha-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:2.7.1.199 ;
+    kg:hasProduct kegg:C00615,
+        kegg:C00668 ;
+    kg:hasSubstrate kegg:C00031,
+        kegg:C04261 .
+
+kegg:C00009 a kg:Compound ;
+    rdfs:label "Orthophosphate" .
+
+kegg:C00022 a kg:Compound ;
+    rdfs:label "Pyruvate" .
+
+kegg:C00074 a kg:Compound ;
+    rdfs:label "Phosphoenolpyruvate" .
+
+kegg:C01172 a kg:Compound ;
+    rdfs:label "beta-D-Glucose 6-phosphate" .
+
+kegg:R05133 a kg:Reaction ;
+    rdfs:label "Arbutin 6-phosphate + H2O <=> Hydroquinone + beta-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasProduct kegg:C00530,
+        kegg:C01172 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C06187 .
+
+kegg:R05134 a kg:Reaction ;
+    rdfs:label "Salicin 6-phosphate + H2O <=> Salicyl alcohol + beta-D-Glucose 6-phosphate" ;
+    kg:hasEC ec:3.2.1.86 ;
+    kg:hasProduct kegg:C01172,
+        kegg:C02323 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C06188 .
+
+kegg:C00668 a kg:Compound ;
+    rdfs:label "alpha-D-Glucose 6-phosphate" .
+
+kegg:R00754 a kg:Reaction ;
+    rdfs:label "Ethanol + NAD+ <=> Acetaldehyde + NADH + H+" ;
+    kg:hasEC ec:1.1.1.1,
+        ec:1.1.1.71 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00080,
+        kegg:C00084 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C00469 .
+
+kegg:C00008 a kg:Compound ;
+    rdfs:label "ADP" .
+
+kegg:C00080 a kg:Compound ;
+    rdfs:label "H+" .
+
+kegg:C00001 a kg:Compound ;
+    rdfs:label "H2O" .
+
+kegg:C00002 a kg:Compound ;
+    rdfs:label "ATP" .
+

@@ -1,0 +1,198 @@
+@prefix ec: <http://purl.uniprot.org/enzyme/> .
+@prefix hsa: <https://github.com/eascarrunz/pathwaykg/organism/hsa/> .
+@prefix kegg: <https://www.kegg.jp/entry/> .
+@prefix kg: <https://github.com/eascarrunz/pathwaykg/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+hsa:10 a kg:Gene ;
+    rdfs:label "(RefSeq) arylamine N-acetyltransferase 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:A4Z6T7>,
+        <https://identifiers.org/uniprot:P11245> ;
+    kg:catalyzes kegg:R07940 ;
+    kg:hasEC ec:2.3.1.5 ;
+    kg:hasOrtholog kegg:K00622 ;
+    kg:keggID kegg:10 .
+
+hsa:1544 a kg:Gene ;
+    rdfs:label "(RefSeq) cytochrome P450 1A2" ;
+    owl:sameAs <https://identifiers.org/uniprot:P05177> ;
+    kg:catalyzes kegg:R07939,
+        kegg:R07943,
+        kegg:R07945 ;
+    kg:hasEC ec:1.14.14.1 ;
+    kg:hasOrtholog kegg:K07409 ;
+    kg:keggID kegg:1544 .
+
+hsa:1548 a kg:Gene ;
+    rdfs:label "(RefSeq) cytochrome P450 2A6" ;
+    owl:sameAs <https://identifiers.org/uniprot:P11509> ;
+    kg:catalyzes kegg:R07945 ;
+    kg:hasEC ec:1.14.14.- ;
+    kg:hasOrtholog kegg:K17683 ;
+    kg:keggID kegg:1548 .
+
+hsa:1549 a kg:Gene ;
+    rdfs:label "(RefSeq) cytochrome P450 2A7 isoform 1" ;
+    owl:sameAs <https://identifiers.org/uniprot:P20853> ;
+    kg:catalyzes kegg:R07945 ;
+    kg:hasEC ec:1.14.14.- ;
+    kg:hasOrtholog kegg:K17683 ;
+    kg:keggID kegg:1549 .
+
+hsa:7498 a kg:Gene ;
+    rdfs:label "(RefSeq) xanthine dehydrogenase/oxidase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P47989> ;
+    kg:catalyzes kegg:R07942,
+        kegg:R07977,
+        kegg:R07978,
+        kegg:R07979 ;
+    kg:hasEC ec:1.17.1.4,
+        ec:1.17.3.2 ;
+    kg:hasOrtholog kegg:K00106 ;
+    kg:keggID kegg:7498 .
+
+hsa:9 a kg:Gene ;
+    rdfs:label "(RefSeq) arylamine N-acetyltransferase 1 isoform a" ;
+    owl:sameAs <https://identifiers.org/uniprot:P18440> ;
+    kg:catalyzes kegg:R07940 ;
+    kg:hasEC ec:2.3.1.5 ;
+    kg:hasOrtholog kegg:K00622 ;
+    kg:keggID kegg:9 .
+
+kegg:C00005 a kg:Compound ;
+    rdfs:label "NADPH" .
+
+kegg:C00006 a kg:Compound ;
+    rdfs:label "NADP+" .
+
+kegg:C00067 a kg:Compound ;
+    rdfs:label "Formaldehyde" .
+
+kegg:C00080 a kg:Compound ;
+    rdfs:label "H+" .
+
+kegg:C07480 a kg:Compound ;
+    rdfs:label "Theobromine" .
+
+kegg:C07481 a kg:Compound ;
+    rdfs:label "Caffeine" .
+
+kegg:C16353 a kg:Compound ;
+    rdfs:label "7-Methylxanthine" .
+
+kegg:C16355 a kg:Compound ;
+    rdfs:label "7-Methyluric acid" .
+
+kegg:C16359 a kg:Compound ;
+    rdfs:label "1-Methyluric acid" .
+
+kegg:C16360 a kg:Compound ;
+    rdfs:label "3,7-Dimethyluric acid" .
+
+kegg:C16365 a kg:Compound ;
+    rdfs:label "5-Acetylamino-6-formylamino-3-methyluracil" .
+
+kegg:K00106 a kg:KOTerm ;
+    rdfs:label "xanthine dehydrogenase/oxidase [EC:1.17.1.4 1.17.3.2]" ;
+    kg:hasEC ec:1.17.1.4,
+        ec:1.17.3.2 .
+
+kegg:K07409 a kg:KOTerm ;
+    rdfs:label "cytochrome P450 family 1 subfamily A2 [EC:1.14.14.1]" ;
+    kg:hasEC ec:1.14.14.1 .
+
+kegg:R07939 a kg:Reaction ;
+    rdfs:label "Caffeine + NADPH + Oxygen + H+ <=> 1,7-Dimethylxanthine + NADP+ + Formaldehyde + H2O" ;
+    kg:hasEC ec:1.14.13.179,
+        ec:1.14.14.1 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00006,
+        kegg:C00067,
+        kegg:C13747 ;
+    kg:hasSubstrate kegg:C00005,
+        kegg:C00007,
+        kegg:C00080,
+        kegg:C07481 .
+
+kegg:R07942 a kg:Reaction ;
+    rdfs:label "1-Methylxanthine + H2O + Oxygen <=> 1-Methyluric acid + Hydrogen peroxide" ;
+    kg:hasEC ec:1.17.3.2 ;
+    kg:hasProduct kegg:C00027,
+        kegg:C16359 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C16358 .
+
+kegg:R07943 a kg:Reaction ;
+    rdfs:label "1,7-Dimethylxanthine <=> 1-Methylxanthine" ;
+    kg:hasEC ec:1.14.14.1 ;
+    kg:hasProduct kegg:C16358 ;
+    kg:hasSubstrate kegg:C13747 .
+
+kegg:R07977 a kg:Reaction ;
+    rdfs:label "1,7-Dimethylxanthine + Oxygen + H2O <=> 1,7-Dimethyluric acid + Hydrogen peroxide" ;
+    kg:hasEC ec:1.17.3.2 ;
+    kg:hasProduct kegg:C00027,
+        kegg:C16356 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C13747 .
+
+kegg:R07978 a kg:Reaction ;
+    rdfs:label "Theobromine + H2O + Oxygen <=> 3,7-Dimethyluric acid + Hydrogen peroxide" ;
+    kg:hasEC ec:1.17.3.2 ;
+    kg:hasProduct kegg:C00027,
+        kegg:C16360 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C07480 .
+
+kegg:R07979 a kg:Reaction ;
+    rdfs:label "7-Methylxanthine + Oxygen + H2O <=> 7-Methyluric acid + Hydrogen peroxide" ;
+    kg:hasEC ec:1.17.3.2 ;
+    kg:hasProduct kegg:C00027,
+        kegg:C16355 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C16353 .
+
+kegg:C16356 a kg:Compound ;
+    rdfs:label "1,7-Dimethyluric acid" .
+
+kegg:C16358 a kg:Compound ;
+    rdfs:label "1-Methylxanthine" .
+
+kegg:K00622 a kg:KOTerm ;
+    rdfs:label "arylamine N-acetyltransferase [EC:2.3.1.5]" ;
+    kg:hasEC ec:2.3.1.5 .
+
+kegg:K17683 a kg:KOTerm ;
+    rdfs:label "cytochrome P450 family 2 subfamily A6 [EC:1.14.14.-]" ;
+    kg:hasEC ec:1.14.14.- .
+
+kegg:R07940 a kg:Reaction ;
+    rdfs:label "1,7-Dimethylxanthine <=> 5-Acetylamino-6-formylamino-3-methyluracil" ;
+    kg:hasEC ec:2.3.1.5 ;
+    kg:hasProduct kegg:C16365 ;
+    kg:hasSubstrate kegg:C13747 .
+
+kegg:R07945 a kg:Reaction ;
+    rdfs:label "1,7-Dimethylxanthine <=> 1,7-Dimethyluric acid" ;
+    kg:hasEC ec:1.14.14.-,
+        ec:1.14.14.1 ;
+    kg:hasProduct kegg:C16356 ;
+    kg:hasSubstrate kegg:C13747 .
+
+kegg:C00027 a kg:Compound ;
+    rdfs:label "Hydrogen peroxide" .
+
+kegg:C00001 a kg:Compound ;
+    rdfs:label "H2O" .
+
+kegg:C00007 a kg:Compound ;
+    rdfs:label "Oxygen" .
+
+kegg:C13747 a kg:Compound ;
+    rdfs:label "1,7-Dimethylxanthine" .
+

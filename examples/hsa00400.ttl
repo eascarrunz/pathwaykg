@@ -1,0 +1,170 @@
+@prefix ec: <http://purl.uniprot.org/enzyme/> .
+@prefix hsa: <https://github.com/eascarrunz/pathwaykg/organism/hsa/> .
+@prefix kegg: <https://www.kegg.jp/entry/> .
+@prefix kg: <https://github.com/eascarrunz/pathwaykg/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+hsa:137362 a kg:Gene ;
+    rdfs:label "(RefSeq) putative aspartate aminotransferase, cytoplasmic 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:Q8NHS2> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.1 ;
+    kg:hasOrtholog kegg:K14454 ;
+    kg:keggID kegg:137362 .
+
+hsa:259307 a kg:Gene ;
+    rdfs:label "(RefSeq) L-amino-acid oxidase isoform 1 precursor" ;
+    owl:sameAs <https://identifiers.org/uniprot:Q96RQ9> ;
+    kg:catalyzes kegg:R00689,
+        kegg:R00729 ;
+    kg:hasEC ec:1.4.3.2 ;
+    kg:hasOrtholog kegg:K03334 ;
+    kg:keggID kegg:259307 .
+
+hsa:2805 a kg:Gene ;
+    rdfs:label "(RefSeq) aspartate aminotransferase, cytoplasmic" ;
+    owl:sameAs <https://identifiers.org/uniprot:A0A140VK69>,
+        <https://identifiers.org/uniprot:P17174> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.1 ;
+    kg:hasOrtholog kegg:K14454 ;
+    kg:keggID kegg:2805 .
+
+hsa:2806 a kg:Gene ;
+    rdfs:label "(RefSeq) aspartate aminotransferase, mitochondrial isoform 1 precursor" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00505> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.1 ;
+    kg:hasOrtholog kegg:K14455 ;
+    kg:keggID kegg:2806 .
+
+hsa:5053 a kg:Gene ;
+    rdfs:label "(RefSeq) phenylalanine-4-hydroxylase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00439> ;
+    kg:catalyzes kegg:R01795 ;
+    kg:hasEC ec:1.14.16.1 ;
+    kg:hasOrtholog kegg:K00500 ;
+    kg:keggID kegg:5053 .
+
+hsa:6898 a kg:Gene ;
+    rdfs:label "(RefSeq) tyrosine aminotransferase" ;
+    owl:sameAs <https://identifiers.org/uniprot:A0A140VKB7>,
+        <https://identifiers.org/uniprot:P17735> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.5 ;
+    kg:hasOrtholog kegg:K00815 ;
+    kg:keggID kegg:6898 .
+
+kegg:C00268 a kg:Compound ;
+    rdfs:label "Dihydrobiopterin" .
+
+kegg:C00272 a kg:Compound ;
+    rdfs:label "Tetrahydrobiopterin" .
+
+kegg:K00500 a kg:KOTerm ;
+    rdfs:label "phenylalanine-4-hydroxylase [EC:1.14.16.1]" ;
+    kg:hasEC ec:1.14.16.1 .
+
+kegg:K00815 a kg:KOTerm ;
+    rdfs:label "tyrosine aminotransferase [EC:2.6.1.5]" ;
+    kg:hasEC ec:2.6.1.5 .
+
+kegg:K03334 a kg:KOTerm ;
+    rdfs:label "L-amino-acid oxidase [EC:1.4.3.2]" ;
+    kg:hasEC ec:1.4.3.2 .
+
+kegg:K14455 a kg:KOTerm ;
+    rdfs:label "aspartate aminotransferase, mitochondrial [EC:2.6.1.1]" ;
+    kg:hasEC ec:2.6.1.1 .
+
+kegg:R00689 a kg:Reaction ;
+    rdfs:label "L-Phenylalanine + H2O + Oxygen <=> Phenylpyruvate + Ammonia + Hydrogen peroxide" ;
+    kg:hasEC ec:1.4.3.2 ;
+    kg:hasProduct kegg:C00014,
+        kegg:C00027,
+        kegg:C00166 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C00079 .
+
+kegg:R00729 a kg:Reaction ;
+    rdfs:label "L-Tyrosine + H2O + Oxygen <=> 3-(4-Hydroxyphenyl)pyruvate + Ammonia + Hydrogen peroxide" ;
+    kg:hasEC ec:1.4.3.2 ;
+    kg:hasProduct kegg:C00014,
+        kegg:C00027,
+        kegg:C01179 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00007,
+        kegg:C00082 .
+
+kegg:R01795 a kg:Reaction ;
+    rdfs:label "Tetrahydrobiopterin + L-Phenylalanine + Oxygen <=> Dihydrobiopterin + L-Tyrosine + H2O" ;
+    kg:hasEC ec:1.14.16.1 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00082,
+        kegg:C00268 ;
+    kg:hasSubstrate kegg:C00007,
+        kegg:C00079,
+        kegg:C00272 .
+
+kegg:C00014 a kg:Compound ;
+    rdfs:label "Ammonia" .
+
+kegg:C00025 a kg:Compound ;
+    rdfs:label "L-Glutamate" .
+
+kegg:C00026 a kg:Compound ;
+    rdfs:label "2-Oxoglutarate" .
+
+kegg:C00027 a kg:Compound ;
+    rdfs:label "Hydrogen peroxide" .
+
+kegg:C00166 a kg:Compound ;
+    rdfs:label "Phenylpyruvate" .
+
+kegg:C01179 a kg:Compound ;
+    rdfs:label "3-(4-Hydroxyphenyl)pyruvate" .
+
+kegg:K14454 a kg:KOTerm ;
+    rdfs:label "aspartate aminotransferase, cytoplasmic [EC:2.6.1.1]" ;
+    kg:hasEC ec:2.6.1.1 .
+
+kegg:C00001 a kg:Compound ;
+    rdfs:label "H2O" .
+
+kegg:C00007 a kg:Compound ;
+    rdfs:label "Oxygen" .
+
+kegg:C00079 a kg:Compound ;
+    rdfs:label "L-Phenylalanine" .
+
+kegg:C00082 a kg:Compound ;
+    rdfs:label "L-Tyrosine" .
+
+kegg:R00694 a kg:Reaction ;
+    rdfs:label "L-Phenylalanine + 2-Oxoglutarate <=> Phenylpyruvate + L-Glutamate" ;
+    kg:hasEC ec:2.6.1.1,
+        ec:2.6.1.5,
+        ec:2.6.1.57,
+        ec:2.6.1.9 ;
+    kg:hasProduct kegg:C00025,
+        kegg:C00166 ;
+    kg:hasSubstrate kegg:C00026,
+        kegg:C00079 .
+
+kegg:R00734 a kg:Reaction ;
+    rdfs:label "L-Tyrosine + 2-Oxoglutarate <=> 3-(4-Hydroxyphenyl)pyruvate + L-Glutamate" ;
+    kg:hasEC ec:2.6.1.1,
+        ec:2.6.1.5,
+        ec:2.6.1.57,
+        ec:2.6.1.9 ;
+    kg:hasProduct kegg:C00025,
+        kegg:C01179 ;
+    kg:hasSubstrate kegg:C00026,
+        kegg:C00082 .
+

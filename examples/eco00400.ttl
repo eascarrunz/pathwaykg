@@ -1,0 +1,616 @@
+@prefix ec: <http://purl.uniprot.org/enzyme/> .
+@prefix eco: <https://github.com/eascarrunz/pathwaykg/organism/eco/> .
+@prefix kegg: <https://www.kegg.jp/entry/> .
+@prefix kg: <https://github.com/eascarrunz/pathwaykg/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+eco:b0388 a kg:Gene ;
+    rdfs:label "(RefSeq) shikimate kinase 2" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6E1> ;
+    kg:catalyzes kegg:R02412 ;
+    kg:hasEC ec:2.7.1.71 ;
+    kg:hasOrtholog kegg:K00891 ;
+    kg:keggID kegg:b0388 .
+
+eco:b0754 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-deoxy-7-phosphoheptulonate synthase, Phe-sensitive" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0AB91> ;
+    kg:catalyzes kegg:R01826 ;
+    kg:hasEC ec:2.5.1.54 ;
+    kg:hasOrtholog kegg:K01626 ;
+    kg:keggID kegg:b0754 .
+
+eco:b0908 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-phosphoshikimate 1-carboxyvinyltransferase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6D3> ;
+    kg:catalyzes kegg:R03460 ;
+    kg:hasEC ec:2.5.1.19 ;
+    kg:hasOrtholog kegg:K00800 ;
+    kg:keggID kegg:b0908 .
+
+eco:b0928 a kg:Gene ;
+    rdfs:label "(RefSeq) aspartate aminotransferase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00509> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.1 ;
+    kg:hasOrtholog kegg:K00813 ;
+    kg:keggID kegg:b0928 .
+
+eco:b1260 a kg:Gene ;
+    rdfs:label "(RefSeq) tryptophan synthase subunit alpha" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A877> ;
+    kg:catalyzes kegg:R02340,
+        kegg:R02722 ;
+    kg:hasEC ec:4.2.1.20 ;
+    kg:hasOrtholog kegg:K01695 ;
+    kg:keggID kegg:b1260 .
+
+eco:b1261 a kg:Gene ;
+    rdfs:label "(RefSeq) tryptophan synthase subunit beta" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A879> ;
+    kg:catalyzes kegg:R00674,
+        kegg:R02722 ;
+    kg:hasEC ec:4.2.1.20 ;
+    kg:hasOrtholog kegg:K01696 ;
+    kg:keggID kegg:b1261 .
+
+eco:b1262 a kg:Gene ;
+    rdfs:label "(RefSeq) fused indole-3-glycerol phosphate synthase/phosphoribosylanthranilate isomerase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00909> ;
+    kg:catalyzes kegg:R03508,
+        kegg:R03509 ;
+    kg:hasEC ec:4.1.1.48,
+        ec:5.3.1.24 ;
+    kg:hasOrtholog kegg:K13498 ;
+    kg:keggID kegg:b1262 .
+
+eco:b1263 a kg:Gene ;
+    rdfs:label "(RefSeq) anthranilate synthase subunit TrpD" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00904> ;
+    kg:catalyzes kegg:R00985,
+        kegg:R00986,
+        kegg:R01073 ;
+    kg:hasEC ec:2.4.2.18,
+        ec:4.1.3.27 ;
+    kg:hasOrtholog kegg:K13497 ;
+    kg:keggID kegg:b1263 .
+
+eco:b1264 a kg:Gene ;
+    rdfs:label "(RefSeq) anthranilate synthase subunit TrpE" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00895> ;
+    kg:catalyzes kegg:R00985,
+        kegg:R00986 ;
+    kg:hasEC ec:4.1.3.27 ;
+    kg:hasOrtholog kegg:K01657 ;
+    kg:keggID kegg:b1264 .
+
+eco:b1692 a kg:Gene ;
+    rdfs:label "(RefSeq) quinate/shikimate dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6D5> ;
+    kg:catalyzes kegg:R01872,
+        kegg:R02413,
+        kegg:R06846,
+        kegg:R06847 ;
+    kg:hasEC ec:1.1.1.282 ;
+    kg:hasOrtholog kegg:K05887 ;
+    kg:keggID kegg:b1692 .
+
+eco:b1693 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-dehydroquinate dehydratase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P05194> ;
+    kg:catalyzes kegg:R03084 ;
+    kg:hasEC ec:4.2.1.10 ;
+    kg:hasOrtholog kegg:K03785 ;
+    kg:keggID kegg:b1693 .
+
+eco:b1704 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-deoxy-7-phosphoheptulonate synthase, Trp-sensitive" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00887> ;
+    kg:catalyzes kegg:R01826 ;
+    kg:hasEC ec:2.5.1.54 ;
+    kg:hasOrtholog kegg:K01626 ;
+    kg:keggID kegg:b1704 .
+
+eco:b2021 a kg:Gene ;
+    rdfs:label "(RefSeq) histidinol-phosphate aminotransferase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P06986> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734 ;
+    kg:hasEC ec:2.6.1.9 ;
+    kg:hasOrtholog kegg:K00817 ;
+    kg:keggID kegg:b2021 .
+
+eco:b2329 a kg:Gene ;
+    rdfs:label "(RefSeq) chorismate synthase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P12008> ;
+    kg:catalyzes kegg:R01714 ;
+    kg:hasEC ec:4.2.3.5 ;
+    kg:hasOrtholog kegg:K01736 ;
+    kg:keggID kegg:b2329 .
+
+eco:b2599 a kg:Gene ;
+    rdfs:label "(RefSeq) fused chorismate mutase/prephenate dehydratase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A9J8> ;
+    kg:catalyzes kegg:R00691,
+        kegg:R01373,
+        kegg:R01715 ;
+    kg:hasEC ec:4.2.1.51,
+        ec:5.4.99.5 ;
+    kg:hasOrtholog kegg:K14170 ;
+    kg:keggID kegg:b2599 .
+
+eco:b2600 a kg:Gene ;
+    rdfs:label "(RefSeq) fused chorismate mutase/prephenate dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P07023> ;
+    kg:catalyzes kegg:R01715,
+        kegg:R01728 ;
+    kg:hasEC ec:1.3.1.12,
+        ec:5.4.99.5 ;
+    kg:hasOrtholog kegg:K14187 ;
+    kg:keggID kegg:b2600 .
+
+eco:b2601 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-deoxy-7-phosphoheptulonate synthase, Tyr-sensitive" ;
+    owl:sameAs <https://identifiers.org/uniprot:P00888> ;
+    kg:catalyzes kegg:R01826 ;
+    kg:hasEC ec:2.5.1.54 ;
+    kg:hasOrtholog kegg:K01626 ;
+    kg:keggID kegg:b2601 .
+
+eco:b3281 a kg:Gene ;
+    rdfs:label "(RefSeq) shikimate dehydrogenase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P15770> ;
+    kg:catalyzes kegg:R02413 ;
+    kg:hasEC ec:1.1.1.25 ;
+    kg:hasOrtholog kegg:K00014 ;
+    kg:keggID kegg:b3281 .
+
+eco:b3389 a kg:Gene ;
+    rdfs:label "(RefSeq) 3-dehydroquinate synthase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P07639> ;
+    kg:catalyzes kegg:R03083 ;
+    kg:hasEC ec:4.2.3.4 ;
+    kg:hasOrtholog kegg:K01735 ;
+    kg:keggID kegg:b3389 .
+
+eco:b3390 a kg:Gene ;
+    rdfs:label "(RefSeq) shikimate kinase 1" ;
+    owl:sameAs <https://identifiers.org/uniprot:P0A6D7> ;
+    kg:catalyzes kegg:R02412 ;
+    kg:hasEC ec:2.7.1.71 ;
+    kg:hasOrtholog kegg:K00891 ;
+    kg:keggID kegg:b3390 .
+
+eco:b4054 a kg:Gene ;
+    rdfs:label "(RefSeq) tyrosine aminotransferase" ;
+    owl:sameAs <https://identifiers.org/uniprot:P04693> ;
+    kg:catalyzes kegg:R00694,
+        kegg:R00734,
+        kegg:R01731 ;
+    kg:hasEC ec:2.6.1.57 ;
+    kg:hasOrtholog kegg:K00832 ;
+    kg:keggID kegg:b4054 .
+
+kegg:C00002 a kg:Compound ;
+    rdfs:label "ATP" .
+
+kegg:C00008 a kg:Compound ;
+    rdfs:label "ADP" .
+
+kegg:C00013 a kg:Compound ;
+    rdfs:label "Diphosphate" .
+
+kegg:C00014 a kg:Compound ;
+    rdfs:label "Ammonia" .
+
+kegg:C00036 a kg:Compound ;
+    rdfs:label "Oxaloacetate" .
+
+kegg:C00049 a kg:Compound ;
+    rdfs:label "L-Aspartate" .
+
+kegg:C00064 a kg:Compound ;
+    rdfs:label "L-Glutamine" .
+
+kegg:C00082 a kg:Compound ;
+    rdfs:label "L-Tyrosine" .
+
+kegg:C00119 a kg:Compound ;
+    rdfs:label "5-Phospho-alpha-D-ribose 1-diphosphate" .
+
+kegg:C00279 a kg:Compound ;
+    rdfs:label "D-Erythrose 4-phosphate" .
+
+kegg:K00014 a kg:KOTerm ;
+    rdfs:label "shikimate dehydrogenase [EC:1.1.1.25]" ;
+    kg:hasEC ec:1.1.1.25 .
+
+kegg:K00800 a kg:KOTerm ;
+    rdfs:label "3-phosphoshikimate 1-carboxyvinyltransferase [EC:2.5.1.19]" ;
+    kg:hasEC ec:2.5.1.19 .
+
+kegg:K00813 a kg:KOTerm ;
+    rdfs:label "aspartate aminotransferase [EC:2.6.1.1]" ;
+    kg:hasEC ec:2.6.1.1 .
+
+kegg:K00817 a kg:KOTerm ;
+    rdfs:label "histidinol-phosphate aminotransferase [EC:2.6.1.9]" ;
+    kg:hasEC ec:2.6.1.9 .
+
+kegg:K00832 a kg:KOTerm ;
+    rdfs:label "aromatic-amino-acid transaminase [EC:2.6.1.57]" ;
+    kg:hasEC ec:2.6.1.57 .
+
+kegg:K01657 a kg:KOTerm ;
+    rdfs:label "anthranilate synthase component I [EC:4.1.3.27]" ;
+    kg:hasEC ec:4.1.3.27 .
+
+kegg:K01695 a kg:KOTerm ;
+    rdfs:label "tryptophan synthase alpha chain [EC:4.2.1.20]" ;
+    kg:hasEC ec:4.2.1.20 .
+
+kegg:K01696 a kg:KOTerm ;
+    rdfs:label "tryptophan synthase beta chain [EC:4.2.1.20]" ;
+    kg:hasEC ec:4.2.1.20 .
+
+kegg:K01735 a kg:KOTerm ;
+    rdfs:label "3-dehydroquinate synthase [EC:4.2.3.4]" ;
+    kg:hasEC ec:4.2.3.4 .
+
+kegg:K01736 a kg:KOTerm ;
+    rdfs:label "chorismate synthase [EC:4.2.3.5]" ;
+    kg:hasEC ec:4.2.3.5 .
+
+kegg:K03785 a kg:KOTerm ;
+    rdfs:label "3-dehydroquinate dehydratase I [EC:4.2.1.10]" ;
+    kg:hasEC ec:4.2.1.10 .
+
+kegg:K05887 a kg:KOTerm ;
+    rdfs:label "quinate/shikimate dehydrogenase [EC:1.1.1.282]" ;
+    kg:hasEC ec:1.1.1.282 .
+
+kegg:K13497 a kg:KOTerm ;
+    rdfs:label "anthranilate synthase/phosphoribosyltransferase [EC:4.1.3.27 2.4.2.18]" ;
+    kg:hasEC ec:2.4.2.18,
+        ec:4.1.3.27 .
+
+kegg:K13498 a kg:KOTerm ;
+    rdfs:label "indole-3-glycerol phosphate synthase / phosphoribosylanthranilate isomerase [EC:4.1.1.48 5.3.1.24]" ;
+    kg:hasEC ec:4.1.1.48,
+        ec:5.3.1.24 .
+
+kegg:K14170 a kg:KOTerm ;
+    rdfs:label "chorismate mutase / prephenate dehydratase [EC:5.4.99.5 4.2.1.51]" ;
+    kg:hasEC ec:4.2.1.51,
+        ec:5.4.99.5 .
+
+kegg:K14187 a kg:KOTerm ;
+    rdfs:label "chorismate mutase / prephenate dehydrogenase [EC:5.4.99.5 1.3.1.12]" ;
+    kg:hasEC ec:1.3.1.12,
+        ec:5.4.99.5 .
+
+kegg:R00674 a kg:Reaction ;
+    rdfs:label "L-Serine + Indole <=> L-Tryptophan + H2O" ;
+    kg:hasEC ec:4.2.1.122,
+        ec:4.2.1.20 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00078 ;
+    kg:hasSubstrate kegg:C00065,
+        kegg:C00463 .
+
+kegg:R00691 a kg:Reaction ;
+    rdfs:label "L-Arogenate <=> L-Phenylalanine + H2O + CO2" ;
+    kg:hasEC ec:4.2.1.51,
+        ec:4.2.1.91 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00011,
+        kegg:C00079 ;
+    kg:hasSubstrate kegg:C00826 .
+
+kegg:R01073 a kg:Reaction ;
+    rdfs:label "N-(5-Phospho-D-ribosyl)anthranilate + Diphosphate <=> Anthranilate + 5-Phospho-alpha-D-ribose 1-diphosphate" ;
+    kg:hasEC ec:2.4.2.18 ;
+    kg:hasProduct kegg:C00108,
+        kegg:C00119 ;
+    kg:hasSubstrate kegg:C00013,
+        kegg:C04302 .
+
+kegg:R01373 a kg:Reaction ;
+    rdfs:label "Prephenate <=> Phenylpyruvate + H2O + CO2" ;
+    kg:hasEC ec:4.2.1.51,
+        ec:4.2.1.91 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00011,
+        kegg:C00166 ;
+    kg:hasSubstrate kegg:C00254 .
+
+kegg:R01714 a kg:Reaction ;
+    rdfs:label "5-O-(1-Carboxyvinyl)-3-phosphoshikimate <=> Chorismate + Orthophosphate" ;
+    kg:hasEC ec:4.2.3.5 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C00251 ;
+    kg:hasSubstrate kegg:C01269 .
+
+kegg:R01728 a kg:Reaction ;
+    rdfs:label "Prephenate + NAD+ <=> 3-(4-Hydroxyphenyl)pyruvate + CO2 + NADH + H+" ;
+    kg:hasEC ec:1.3.1.12 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00011,
+        kegg:C00080,
+        kegg:C01179 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C00254 .
+
+kegg:R01731 a kg:Reaction ;
+    rdfs:label "Oxaloacetate + L-Arogenate <=> L-Aspartate + Prephenate" ;
+    kg:hasEC ec:2.6.1.57,
+        ec:2.6.1.78 ;
+    kg:hasProduct kegg:C00049,
+        kegg:C00254 ;
+    kg:hasSubstrate kegg:C00036,
+        kegg:C00826 .
+
+kegg:R01872 a kg:Reaction ;
+    rdfs:label "Quinate + NAD+ <=> 3-Dehydroquinate + NADH + H+" ;
+    kg:hasEC ec:1.1.1.24,
+        ec:1.1.1.282 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00080,
+        kegg:C00944 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C00296 .
+
+kegg:R02340 a kg:Reaction ;
+    rdfs:label "Indoleglycerol phosphate <=> Indole + D-Glyceraldehyde 3-phosphate" ;
+    kg:hasEC ec:4.1.2.8,
+        ec:4.2.1.20 ;
+    kg:hasProduct kegg:C00118,
+        kegg:C00463 ;
+    kg:hasSubstrate kegg:C03506 .
+
+kegg:R03083 a kg:Reaction ;
+    rdfs:label "2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate <=> 3-Dehydroquinate + Orthophosphate" ;
+    kg:hasEC ec:4.2.3.4 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C00944 ;
+    kg:hasSubstrate kegg:C04691 .
+
+kegg:R03084 a kg:Reaction ;
+    rdfs:label "3-Dehydroquinate <=> 3-Dehydroshikimate + H2O" ;
+    kg:hasEC ec:4.2.1.10 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C02637 ;
+    kg:hasSubstrate kegg:C00944 .
+
+kegg:R03460 a kg:Reaction ;
+    rdfs:label "Phosphoenolpyruvate + Shikimate 3-phosphate <=> Orthophosphate + 5-O-(1-Carboxyvinyl)-3-phosphoshikimate" ;
+    kg:hasEC ec:2.5.1.19 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C01269 ;
+    kg:hasSubstrate kegg:C00074,
+        kegg:C03175 .
+
+kegg:R03508 a kg:Reaction ;
+    rdfs:label "1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate <=> Indoleglycerol phosphate + CO2 + H2O" ;
+    kg:hasEC ec:4.1.1.48 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00011,
+        kegg:C03506 ;
+    kg:hasSubstrate kegg:C01302 .
+
+kegg:R03509 a kg:Reaction ;
+    rdfs:label "N-(5-Phospho-D-ribosyl)anthranilate <=> 1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate" ;
+    kg:hasEC ec:5.3.1.24 ;
+    kg:hasProduct kegg:C01302 ;
+    kg:hasSubstrate kegg:C04302 .
+
+kegg:R06846 a kg:Reaction ;
+    rdfs:label "Quinate + NADP+ <=> 3-Dehydroquinate + NADPH + H+" ;
+    kg:hasEC ec:1.1.1.282 ;
+    kg:hasProduct kegg:C00005,
+        kegg:C00080,
+        kegg:C00944 ;
+    kg:hasSubstrate kegg:C00006,
+        kegg:C00296 .
+
+kegg:R06847 a kg:Reaction ;
+    rdfs:label "Shikimate + NAD+ <=> 3-Dehydroshikimate + NADH + H+" ;
+    kg:hasEC ec:1.1.1.24,
+        ec:1.1.1.282 ;
+    kg:hasProduct kegg:C00004,
+        kegg:C00080,
+        kegg:C02637 ;
+    kg:hasSubstrate kegg:C00003,
+        kegg:C00493 .
+
+kegg:C00005 a kg:Compound ;
+    rdfs:label "NADPH" .
+
+kegg:C00006 a kg:Compound ;
+    rdfs:label "NADP+" .
+
+kegg:C00022 a kg:Compound ;
+    rdfs:label "Pyruvate" .
+
+kegg:C00026 a kg:Compound ;
+    rdfs:label "2-Oxoglutarate" .
+
+kegg:C00065 a kg:Compound ;
+    rdfs:label "L-Serine" .
+
+kegg:C00074 a kg:Compound ;
+    rdfs:label "Phosphoenolpyruvate" .
+
+kegg:C00078 a kg:Compound ;
+    rdfs:label "L-Tryptophan" .
+
+kegg:C00079 a kg:Compound ;
+    rdfs:label "L-Phenylalanine" .
+
+kegg:C00118 a kg:Compound ;
+    rdfs:label "D-Glyceraldehyde 3-phosphate" .
+
+kegg:C00166 a kg:Compound ;
+    rdfs:label "Phenylpyruvate" .
+
+kegg:C00296 a kg:Compound ;
+    rdfs:label "Quinate" .
+
+kegg:C00463 a kg:Compound ;
+    rdfs:label "Indole" .
+
+kegg:C00826 a kg:Compound ;
+    rdfs:label "L-Arogenate" .
+
+kegg:C01179 a kg:Compound ;
+    rdfs:label "3-(4-Hydroxyphenyl)pyruvate" .
+
+kegg:C01269 a kg:Compound ;
+    rdfs:label "5-O-(1-Carboxyvinyl)-3-phosphoshikimate" .
+
+kegg:C01302 a kg:Compound ;
+    rdfs:label "1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose 5-phosphate" .
+
+kegg:C03175 a kg:Compound ;
+    rdfs:label "Shikimate 3-phosphate" .
+
+kegg:C04302 a kg:Compound ;
+    rdfs:label "N-(5-Phospho-D-ribosyl)anthranilate" .
+
+kegg:C04691 a kg:Compound ;
+    rdfs:label "2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate" .
+
+kegg:K00891 a kg:KOTerm ;
+    rdfs:label "shikimate kinase [EC:2.7.1.71]" ;
+    kg:hasEC ec:2.7.1.71 .
+
+kegg:R00985 a kg:Reaction ;
+    rdfs:label "Chorismate + Ammonia <=> Anthranilate + Pyruvate + H2O" ;
+    kg:hasEC ec:4.1.3.27 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00022,
+        kegg:C00108 ;
+    kg:hasSubstrate kegg:C00014,
+        kegg:C00251 .
+
+kegg:R00986 a kg:Reaction ;
+    rdfs:label "Chorismate + L-Glutamine <=> Anthranilate + Pyruvate + L-Glutamate" ;
+    kg:hasEC ec:4.1.3.27 ;
+    kg:hasProduct kegg:C00022,
+        kegg:C00025,
+        kegg:C00108 ;
+    kg:hasSubstrate kegg:C00064,
+        kegg:C00251 .
+
+kegg:R01715 a kg:Reaction ;
+    rdfs:label "Chorismate <=> Prephenate" ;
+    kg:hasEC ec:5.4.99.5 ;
+    kg:hasProduct kegg:C00254 ;
+    kg:hasSubstrate kegg:C00251 .
+
+kegg:R02412 a kg:Reaction ;
+    rdfs:label "ATP + Shikimate <=> ADP + Shikimate 3-phosphate" ;
+    kg:hasEC ec:2.7.1.71 ;
+    kg:hasProduct kegg:C00008,
+        kegg:C03175 ;
+    kg:hasSubstrate kegg:C00002,
+        kegg:C00493 .
+
+kegg:R02413 a kg:Reaction ;
+    rdfs:label "Shikimate + NADP+ <=> 3-Dehydroshikimate + NADPH + H+" ;
+    kg:hasEC ec:1.1.1.25,
+        ec:1.1.1.282 ;
+    kg:hasProduct kegg:C00005,
+        kegg:C00080,
+        kegg:C02637 ;
+    kg:hasSubstrate kegg:C00006,
+        kegg:C00493 .
+
+kegg:R02722 a kg:Reaction ;
+    rdfs:label "L-Serine + Indoleglycerol phosphate <=> L-Tryptophan + D-Glyceraldehyde 3-phosphate + H2O" ;
+    kg:hasEC ec:4.2.1.20 ;
+    kg:hasProduct kegg:C00001,
+        kegg:C00078,
+        kegg:C00118 ;
+    kg:hasSubstrate kegg:C00065,
+        kegg:C03506 .
+
+kegg:C00003 a kg:Compound ;
+    rdfs:label "NAD+" .
+
+kegg:C00004 a kg:Compound ;
+    rdfs:label "NADH" .
+
+kegg:C00025 a kg:Compound ;
+    rdfs:label "L-Glutamate" .
+
+kegg:C00108 a kg:Compound ;
+    rdfs:label "Anthranilate" .
+
+kegg:C00493 a kg:Compound ;
+    rdfs:label "Shikimate" .
+
+kegg:C02637 a kg:Compound ;
+    rdfs:label "3-Dehydroshikimate" .
+
+kegg:C03506 a kg:Compound ;
+    rdfs:label "Indoleglycerol phosphate" .
+
+kegg:K01626 a kg:KOTerm ;
+    rdfs:label "3-deoxy-7-phosphoheptulonate synthase [EC:2.5.1.54]" ;
+    kg:hasEC ec:2.5.1.54 .
+
+kegg:R00694 a kg:Reaction ;
+    rdfs:label "L-Phenylalanine + 2-Oxoglutarate <=> Phenylpyruvate + L-Glutamate" ;
+    kg:hasEC ec:2.6.1.1,
+        ec:2.6.1.5,
+        ec:2.6.1.57,
+        ec:2.6.1.9 ;
+    kg:hasProduct kegg:C00025,
+        kegg:C00166 ;
+    kg:hasSubstrate kegg:C00026,
+        kegg:C00079 .
+
+kegg:R00734 a kg:Reaction ;
+    rdfs:label "L-Tyrosine + 2-Oxoglutarate <=> 3-(4-Hydroxyphenyl)pyruvate + L-Glutamate" ;
+    kg:hasEC ec:2.6.1.1,
+        ec:2.6.1.5,
+        ec:2.6.1.57,
+        ec:2.6.1.9 ;
+    kg:hasProduct kegg:C00025,
+        kegg:C01179 ;
+    kg:hasSubstrate kegg:C00026,
+        kegg:C00082 .
+
+kegg:R01826 a kg:Reaction ;
+    rdfs:label "Phosphoenolpyruvate + D-Erythrose 4-phosphate + H2O <=> 2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate + Orthophosphate" ;
+    kg:hasEC ec:2.5.1.54 ;
+    kg:hasProduct kegg:C00009,
+        kegg:C04691 ;
+    kg:hasSubstrate kegg:C00001,
+        kegg:C00074,
+        kegg:C00279 .
+
+kegg:C00009 a kg:Compound ;
+    rdfs:label "Orthophosphate" .
+
+kegg:C00011 a kg:Compound ;
+    rdfs:label "CO2" .
+
+kegg:C00251 a kg:Compound ;
+    rdfs:label "Chorismate" .
+
+kegg:C00254 a kg:Compound ;
+    rdfs:label "Prephenate" .
+
+kegg:C00944 a kg:Compound ;
+    rdfs:label "3-Dehydroquinate" .
+
+kegg:C00080 a kg:Compound ;
+    rdfs:label "H+" .
+
+kegg:C00001 a kg:Compound ;
+    rdfs:label "H2O" .
+
