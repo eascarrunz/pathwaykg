@@ -2,7 +2,6 @@
 
 """Functions for fetching data to build pathway knowledge graphs"""
 
-import sys
 from dataclasses import dataclass, field
 from xml.etree import ElementTree
 import io
@@ -74,16 +73,15 @@ def parse_kgml(handle: TextIO) -> KGMLData:
 @retry(
     wait=wait_exponential(**WAIT_EXPONENTIAL_ARGS),
     stop=stop_after_attempt(5),
-    retry=retry_if_exception_type(urllib.error.URLError),
+    retry=retry_if_exception_type((urllib.error.URLError, ConnectionResetError)),
 )
-def _fetch_batch(batch_ids: list[str]) -> io.TextIOWrapper:
-    # print(batch_ids, file=sys.stderr)
-    return REST.kegg_get(batch_ids)
+def _fetch_batch_text(batch_ids: list[str]) -> str:
+    return REST.kegg_get(batch_ids).read()
 
 
 def fetch_generic_records(ids: Iterable[str]) -> Generator[str, Any, None]:
     for batch_ids in itertools.batched(ids, KEGG_REST_GET_BATCH_LIMIT):
-        yield from (block for block in _fetch_batch(list(batch_ids)).read().split("///") if block.strip())
+        yield from (block for block in _fetch_batch_text(list(batch_ids)).split("///") if block.strip())
 
 
 """
@@ -123,7 +121,7 @@ def fetch_reaction_records(reaction_ids: set[str]) -> Generator[dict, Any, None]
 
 def fetch_compound_records(compound_ids: set[str]) -> Generator[Compound.Record, Any, None]:
     for batch_ids in itertools.batched(compound_ids, KEGG_REST_GET_BATCH_LIMIT):
-        yield from Compound.parse(_fetch_batch(list(batch_ids)))
+        yield from Compound.parse(io.StringIO(_fetch_batch_text(list(batch_ids))))
 
 
 
@@ -142,27 +140,14 @@ def extract_gene_ids(text: str) -> list[str]:
     return sorted(set(row.split()[-1].strip() for row in text.splitlines()))
 
 
-
-
-
 def fetch_gene_records(gene_ids: list[str]) -> Generator[Gene.Record, Any, None]:
     for batch_ids in itertools.batched(gene_ids, KEGG_REST_GET_BATCH_LIMIT):
-        yield from Gene.parse(_fetch_batch(list(batch_ids)))
+        yield from Gene.parse(io.StringIO(_fetch_batch_text(list(batch_ids))))
 
 
 def main():
     organism_id = input("Give an organism ID:\t")
     pathway_id = input("Give a pathway ID:\t")
-
-    # text = fetch_pathway_genes(organism_id, pathway_id)
-    # gene_ids = extract_gene_ids(text)
-    # print(gene_ids)
-    # gene_records = fetch_gene_records(gene_ids)
-
-    # for record in gene_records:
-    #     print(record.dblinks)
-
-    # print(text)
 
     xml_handle = fetch_pathway_kgml(organism_id, pathway_id)
     data = parse_kgml(xml_handle)
