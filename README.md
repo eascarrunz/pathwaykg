@@ -1,6 +1,6 @@
 # Knowledge graphs of KEGG pathways
 
-![hsa00232: Pathway of caffeine metabolism in humans](assets/hsa00232.png)
+<p align="center"><img src="assets/hsa00232.png" alt="hsa00232: Pathway of caffeine metabolism in humans" width="300"></p>
 
 This project includes scripts for building [RDF](https://en.wikipedia.org/wiki/Resource_Description_Framework) knowledge graphs and visualizing pathways from the KEGG database. You can visualize one pathway graph at the time, or combine pathways from two different species to see their overlap.
 
