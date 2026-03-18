@@ -222,10 +222,10 @@ def main() -> int:
         description="Create a dynamic HTML plot of a pathway from a RDF graph",
     )
     arg_parser.add_argument(
-        "-i", "--input", nargs='+', type=Path, help="Path to RDF file in Turtle format, include a second file to visualize the graph overlap"
+        "-i", "--input", nargs='+', type=Path, help="Path to RDF file in Turtle format, include a second file to visualize the graph overlap of orthologs in the two pathways"
     )
     arg_parser.add_argument(
-        "-o", "--output", type=Path, help="Path for output HTML file"
+        "-o", "--output", type=Path, help="Path for output HTML file (leave empty to write to stdout)"
     )
     args = arg_parser.parse_args()
 
@@ -246,7 +246,7 @@ def main() -> int:
     if args.output:
         nw.save_graph(str(args.output))
     else:
-        sys.stdout.write(nw.html)
+        sys.stdout.write(nw.generate_html() + '\n')
 
     return 0
 

@@ -5,14 +5,18 @@
 import sys
 import argparse
 from tqdm import tqdm
-from pathlib import Path
-from typing import Generator, Any, Iterable
 from Bio.KEGG import Gene, Compound
 from rdflib.plugins.sparql import prepareQuery
 from rdflib import Namespace, Graph, Literal, URIRef
 import pathwaykg.namespaces as ns
 from pathwaykg.fetch import fetch_pathway_kgml, parse_kgml, KGMLData, fetch_gene_records, fetch_reaction_records, fetch_compound_records
 import regex
+
+
+class InvalidKEGGPathwayEntry(Exception):
+    def __init__(self, s: str):
+        super().__init__(f"Invalid KEGG pathway entry \"{s}\". A valid KEGG pathway entry consists of \"ko\" or a three-letter organism code, followed by five digits")
+
 
 def add_reaction(graph: Graph, reaction_record: dict) -> None:
     reaction_uri = ns.KEGG[reaction_record["id"]]
@@ -120,24 +124,40 @@ SELECT DISTINCT ?compound WHERE {
 
 def main() -> int:
     arg_parser = argparse.ArgumentParser("BuildKG", description="Build an RDF knowledge graph for a pathway")
-    arg_parser.add_argument("--organism", "-o", type=str, help="KEGG organism ID")
-    arg_parser.add_argument("--pathway", "-p", type=str, help="KEGG pathway ID")
+    arg_parser.add_argument("--pathway", "-p", type=str, help="KEGG pathway entry", required=True)
 
     args = arg_parser.parse_args()
 
-    if not args.organism:
-        print("You must provide a KEGG organism ID")
+    if len(args.pathway) == 7:
+        organism, pathway = args.pathway[:2], args.pathway[2:]
+        
+        if organism == "ko":
+            print("map/ko pathways are not supported", file=sys.stderr)
 
-        return 1
+            return 1
+        
+        else:
+            raise InvalidKEGGPathwayEntry(args.pathway)
+
+    elif len(args.pathway) == 8:
+        organism, pathway = args.pathway[:3], args.pathway[3:]
+
+        if organism == "map":
+            print("map/ko pathways are not supported", file=sys.stderr)
+
+            return 1
+            
+
+    else:
+        raise InvalidKEGGPathwayEntry(args.pathway)
     
-    if not args.pathway:
-        print("You must provide a KEGG pathway ID")
 
-        return 1
-    
-    kgml_data = parse_kgml(fetch_pathway_kgml(args.organism, args.pathway))
+    if not all(c.isalpha() for c in organism) or not all(c.isnumeric() for c in pathway):
+        raise InvalidKEGGPathwayEntry(args.pathway)
 
-    g = build_kg(args.organism, kgml_data)
+    kgml_data = parse_kgml(fetch_pathway_kgml(organism, pathway))
+
+    g = build_kg(organism, kgml_data)
 
     g.serialize(sys.stdout.buffer, "turtle")
 
