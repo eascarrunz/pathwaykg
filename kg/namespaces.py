@@ -1,6 +1,8 @@
 from rdflib import Namespace, OWL, RDF, RDFS
 
-_ORGANISM_BASE_URL = "https://example.org/kg/organism/"
+_KG_BASE_URL = "https://github.com/eascarrunz/pathwaykg/"
+
+_ORGANISM_BASE_URL = _KG_BASE_URL + "organism/"
 
 
 def create_organism_namespace(org_id: str) -> Namespace:
@@ -9,6 +11,6 @@ def create_organism_namespace(org_id: str) -> Namespace:
 
 KEGG = Namespace("https://www.kegg.jp/entry/")
 UNIPROT = Namespace("https://identifiers.org/uniprot:")
-KG = Namespace("https://example.org/kg/ontology/")
+KG = Namespace(_KG_BASE_URL + "ontology/")
 EC = Namespace("http://purl.uniprot.org/enzyme/")
 RHEA = Namespace("https://rdf.rhea-db.org/")
